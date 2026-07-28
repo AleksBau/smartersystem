@@ -14,7 +14,7 @@ const steps = [
   { num: '1', icon: '🔍', title: 'Bedarfsanalyse', desc: 'In einer kostenlosen Erstberatung besprechen wir Ihre Wünsche und die baulichen Gegebenheiten.' },
   { num: '2', icon: '📋', title: 'Individuelle Planung', desc: 'Wir erstellen ein passgenaues Konzept mit dem Ziel Ihre Erwartungen zu übertreffen.' },
   { num: '3', icon: '🛠️', title: 'Fachgerechte Montage', desc: 'Die Installation erfolgt professionell und ohne Änderungen an der Bausubstanz.' },
-  { num: '4', icon: '🎓', title: 'Einweisung & Übergabe', desc: 'Sie erhalten eine gute Einweisung in die Bedienung Ihres Smart Homes. Eine einfache und selbsterklärende Handhabung der App ist uns wichtig.' },
+  { num: '4', icon: '🎓', title: 'Einweisung & Übergabe', desc: 'Sie erhalten eine gute Einweisung in die Bedienung Ihres Smart Homes. Die einfache und selbsterklärende Handhabung der App ist uns wichtig.' },
 ]
 
 const faqs = [
