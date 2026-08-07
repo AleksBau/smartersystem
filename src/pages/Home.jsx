@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import StarterSets from '../components/StarterSets'
 
 const services = [
   { icon: '💡', title: 'Beleuchtung', desc: 'Automatische Lichtsteuerung nach Tageszeit und Anwesenheit. Dimmen und Szenarien für jeden Anlass. Beschattung Ihrer Jalousie mit intelligenter Steuerung.' },
   { icon: '🌡️', title: 'Heizungssteuerung', desc: 'Intelligente Raumtemperaturregelung spart bis zu 30 % Heizkosten. Automatische Anpassung an Ihre Gewohnheiten und Zeitpläne.' },
   { icon: '🔒', title: 'Sicherheit', desc: 'Überwachungskameras, Bewegungsmelder und smarte Türschlösser. Benachrichtigungen auf Ihr Smartphone und automatische Reaktionen bei Abwesenheit.' },
   { icon: '📱', title: 'App-Steuerung', desc: 'Alles in einer App: Licht, Heizung, Sicherheit und mehr. Fernsteuerung von überall, Zeitschaltungen und individuelle Automatisierungen.' },
-  { icon: '🔧', title: 'Nachrüst-Installation', desc: 'Smart Home für jede Immobilie ob Haus, Wohnung, Schule, Seniorenheim oder Büro. Unsere Systeme lassen sich sauber und schnell nachrüsten ohne bauliche Eingriffe.' },
+  { icon: '🔧', title: 'Nachrüst-Installation', desc: 'Smart Home für jede Immobilie ob Haus, Wohnung, Seniorenheim oder Büro. Unsere Systeme lassen sich sauber und schnell nachrüsten ohne bauliche Eingriffe.' },
   { icon: '✨', title: 'Komfort', desc: 'Szenarien wie „Guten Morgen" oder „Urlaub" steuern automatisch alle Geräte. Sprachsteuerung und Gestensteuerung für ultimativen Komfort.' },
 ]
 
@@ -79,6 +80,19 @@ export default function Home() {
           <h1 className="font-playfair font-bold text-white leading-tight mb-5" style={{ fontSize: 'clamp(2.6rem, 5.5vw, 4rem)' }}>
             Ihr Zuhause. <br /><span className="italic opacity-90">Nur Smarter.</span>
           </h1>
+          <p className="text-white/85 text-lg mb-8">
+            Komplettpakete ab <span className="font-bold text-white">949 €</span> – installiert, eingerichtet und erklärt.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+            <a href="#pakete"
+              className="bg-white text-[#1A56E8] font-bold px-8 py-3.5 rounded-xl hover:bg-[#F0F4FF] transition-colors no-underline text-sm">
+              Pakete &amp; Preise ansehen
+            </a>
+            <Link to="/kontakt"
+              className="border border-white/50 text-white font-bold px-8 py-3.5 rounded-xl hover:bg-white/10 transition-colors no-underline text-sm">
+              Kostenlose Beratung
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -215,8 +229,11 @@ export default function Home() {
         </div>
       </section>
 
+      {/* STARTER-SETS / FESTPREIS-PAKETE */}
+      <StarterSets />
+
       {/* FAQ */}
-      <section id="faq" className="py-24 px-[5%] bg-[#F0F4FF]">
+      <section id="faq" className="py-24 px-[5%] bg-white">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-14">
             <div className="section-label">Häufige Fragen</div>
