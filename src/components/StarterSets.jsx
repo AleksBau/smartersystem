@@ -152,12 +152,6 @@ export default function StarterSets() {
             Ihr Zuhause passt in kein Paket? <Link to="/kontakt" className="text-[#1A56E8] font-semibold no-underline hover:underline">Wir stellen Ihnen ein individuelles Angebot zusammen</Link> – die Beratung vor Ort ist kostenlos und unverbindlich.
           </p>
         </div>
-
-        <p className="mt-10 text-xs text-gray-400 leading-relaxed max-w-3xl mx-auto text-center">
-          Endpreise inkl. 19 % MwSt. für Objekte in Berlin, bei vorhandenem Internetanschluss. Arbeiten an der festen
-          Elektroinstallation führt ein eingetragener Elektrofachbetrieb aus und werden gesondert ausgewiesen. Die Anlage ist ein
-          Komfortsystem und ersetzt keine zertifizierte Einbruchmeldeanlage und keinen Hausnotruf.
-        </p>
       </div>
     </section>
   )
