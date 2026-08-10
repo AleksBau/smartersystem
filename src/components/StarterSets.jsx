@@ -5,15 +5,15 @@ const pakete = [
     key: 'S',
     name: 'Starter',
     claim: 'Sicher & Warm',
-    preis: '949',
+    preis: '999',
     highlight: false,
-    inhalt: [
-      '1 × Zentrale',
-      '2 × Heizkörperthermostat',
-      '1 × Wandthermostat mit Luftfeuchtemessung',
-      '3 × Fenster- und Türkontakt',
-      '1 × Schaltsteckdose',
-      '1 × Alarmsirene',
+    kannDas: [
+      'Zentrale Steuerung für alles, auch von unterwegs',
+      'Zwei Heizkörper regeln sich selbst – Fenster auf, Heizung aus',
+      'Fenster und Türen werden überwacht',
+      'Bewegung im Innenraum wird erkannt',
+      'Alarm mit Sirene, Licht und Nachricht aufs Handy',
+      'Warnung, bevor Schimmel entsteht',
     ],
     nutzen: 'Heizkosten senken, Schimmel vorbeugen, Alarm bei geöffnetem Fenster.',
   },
@@ -23,15 +23,14 @@ const pakete = [
     claim: 'Wohnung komplett',
     preis: '1.249',
     highlight: true,
-    inhalt: [
-      '1 × Zentrale',
-      '3 × Heizkörperthermostat',
-      '1 × Wandthermostat mit Luftfeuchtemessung',
-      '1 × Raumklimasensor',
-      '2 × Schaltsteckdose',
-      '4 × Fenster- und Türkontakt',
-      '1 × Alarmsirene',
-      '1 × Funk-Wandtaster (ohne Kabel, frei platzierbar)',
+    kannDas: [
+      'Zentrale Steuerung für alles, auch von unterwegs',
+      'Die ganze Wohnung heizt nach Ihrem Tagesablauf',
+      'Alle wichtigen Fenster und Türen werden überwacht',
+      'Bewegung im Innenraum wird erkannt',
+      'Alarm mit Sirene, Licht und Nachricht aufs Handy',
+      'Licht schalten per Funktaster – an jeder Wand, ohne Kabel',
+      'Nachricht, wenn die Waschmaschine fertig ist',
     ],
     nutzen: 'Die komplette Wohnung im Griff – Heizung, Licht, Sicherheit, alles in einer App.',
   },
@@ -41,15 +40,16 @@ const pakete = [
     claim: 'Haus & Zutritt',
     preis: '2.249',
     highlight: false,
-    inhalt: [
-      '1 × Zentrale',
-      '4 × Heizkörperthermostat',
-      '2 × Wandthermostat mit Luftfeuchtemessung',
-      '1 × Präsenzmelder',
-      '2 × Schaltsteckdose, 1 × Messsteckdose',
-      '5 × Fenster- und Türkontakt',
-      '1 × Türschlossantrieb + 2 Fernbedienungen',
-      '2 × Rauchwarnmelder, 1 × Alarmsirene',
+    kannDas: [
+      'Zentrale Steuerung für alles, auch von unterwegs',
+      'Heizung im ganzen Haus, Raum für Raum',
+      'Fenster und Türen im gesamten Objekt überwacht',
+      'Licht schaltet sich nach Anwesenheit von selbst',
+      'Haustür verriegelt automatisch – Zutritt per Fernbedienung',
+      'Alarm mit Sirene, Licht und Nachricht aufs Handy',
+      'Panikknopf für den Ernstfall',
+      'Vernetzte Rauchwarnmelder mit Fluchtwegbeleuchtung',
+      'Nachricht, wenn die Waschmaschine fertig ist',
     ],
     nutzen: 'Nie wieder Schlüssel suchen, nie wieder fragen, ob die Tür zu ist.',
   },
@@ -100,8 +100,7 @@ export default function StarterSets() {
               )}
               <div className="p-8 pb-6">
                 <div className="text-xs font-bold tracking-widest uppercase text-[#1A56E8] mb-1">{p.name}</div>
-                <h3 className="font-playfair font-bold text-2xl text-gray-900 mb-1">{p.claim}</h3>
-                <p className="text-gray-400 text-sm mb-5">{p.zielgruppe}</p>
+                <h3 className="font-playfair font-bold text-2xl text-gray-900 mb-4">{p.claim}</h3>
                 <div className="flex items-baseline gap-2 mb-1">
                   <span className="text-4xl font-bold text-gray-900">{p.preis} €</span>
                   <span className="text-gray-400 text-sm">inkl. MwSt.</span>
@@ -120,9 +119,9 @@ export default function StarterSets() {
                 </Link>
               </div>
               <div className="border-t border-gray-100 p-8 pt-6 flex-1">
-                <div className="text-xs font-bold tracking-widest uppercase text-gray-400 mb-4">Enthaltene Geräte</div>
+                <div className="text-xs font-bold tracking-widest uppercase text-gray-400 mb-4">Was Ihr Zuhause danach kann</div>
                 <ul className="space-y-2.5">
-                  {p.inhalt.map((i, n) => (
+                  {p.kannDas.map((i, n) => (
                     <li key={n} className="flex gap-2.5 text-sm text-gray-600 leading-snug">
                       <Check />
                       <span>{i}</span>
@@ -154,7 +153,11 @@ export default function StarterSets() {
           </p>
         </div>
 
-
+        <p className="mt-10 text-xs text-gray-400 leading-relaxed max-w-3xl mx-auto text-center">
+          Endpreise inkl. 19 % MwSt. für Objekte in Berlin, bei vorhandenem Internetanschluss. Arbeiten an der festen
+          Elektroinstallation führt ein eingetragener Elektrofachbetrieb aus und werden gesondert ausgewiesen. Die Anlage ist ein
+          Komfortsystem und ersetzt keine zertifizierte Einbruchmeldeanlage und keinen Hausnotruf.
+        </p>
       </div>
     </section>
   )

@@ -81,7 +81,7 @@ export default function Home() {
             Ihr Zuhause. <br /><span className="italic opacity-90">Nur Smarter.</span>
           </h1>
           <p className="text-white/85 text-lg mb-8">
-            Komplettpakete ab <span className="font-bold text-white">949 €</span> – installiert, eingerichtet und erklärt.
+            Komplettpakete ab <span className="font-bold text-white">999 €</span> – installiert, eingerichtet und erklärt.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
             <a href="#pakete"
