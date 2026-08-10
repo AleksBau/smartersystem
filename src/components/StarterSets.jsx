@@ -160,12 +160,7 @@ export default function StarterSets() {
           </p>
         </div>
 
-        <p className="mt-8 text-xs text-gray-400 leading-relaxed max-w-4xl mx-auto text-center">
-          Alle Preise sind Endpreise inkl. 19 % MwSt. für Objekte in Berlin. Die Pakete gelten für Geräte, die ohne Eingriff in die feste
-          Elektroinstallation montiert werden. Sind Arbeiten an der Elektroinstallation gewünscht, werden diese von einem eingetragenen
-          Elektrofachbetrieb ausgeführt und gesondert ausgewiesen. Voraussetzung ist ein vorhandener Internetanschluss. Die Anlage ist ein
-          Komfortsystem und ersetzt keine zertifizierte Einbruchmeldeanlage und keinen Hausnotruf.
-        </p>
+
       </div>
     </section>
   )
