@@ -6,13 +6,12 @@ const pakete = [
     name: 'Starter',
     claim: 'Sicher & Warm',
     preis: '949',
-    zielgruppe: 'Für Wohnungen bis ca. 60 m²',
     highlight: false,
     inhalt: [
-      '1 × Zentrale (Access Point)',
+      '1 × Zentrale',
       '2 × Heizkörperthermostat',
       '1 × Wandthermostat mit Luftfeuchtemessung',
-      '2 × Fenster- und Türkontakt',
+      '3 × Fenster- und Türkontakt',
       '1 × Schaltsteckdose',
       '1 × Alarmsirene',
     ],
@@ -23,15 +22,14 @@ const pakete = [
     name: 'Komfort',
     claim: 'Wohnung komplett',
     preis: '1.249',
-    zielgruppe: 'Für Wohnungen bis ca. 90 m²',
     highlight: true,
     inhalt: [
-      '1 × Zentrale (Access Point)',
+      '1 × Zentrale',
       '3 × Heizkörperthermostat',
       '1 × Wandthermostat mit Luftfeuchtemessung',
       '1 × Raumklimasensor',
       '2 × Schaltsteckdose',
-      '3 × Fenster- und Türkontakt',
+      '4 × Fenster- und Türkontakt',
       '1 × Alarmsirene',
       '1 × Funk-Wandtaster (ohne Kabel, frei platzierbar)',
     ],
@@ -42,10 +40,9 @@ const pakete = [
     name: 'Premium',
     claim: 'Haus & Zutritt',
     preis: '2.249',
-    zielgruppe: 'Für Häuser und große Wohnungen',
     highlight: false,
     inhalt: [
-      '1 × Zentrale (Access Point)',
+      '1 × Zentrale',
       '4 × Heizkörperthermostat',
       '2 × Wandthermostat mit Luftfeuchtemessung',
       '1 × Präsenzmelder',
@@ -59,8 +56,8 @@ const pakete = [
 ]
 
 const enthalten = [
-  { icon: '📦', text: 'Alle Geräte inklusive – keine Nachbestellung nötig' },
-  { icon: '🛠️', text: 'Fachgerechte Montage ohne Bohren in tragende Wände' },
+  { icon: '📦', text: 'Alle Geräte inklusive' },
+  { icon: '🛠️', text: 'Fachgerechte Montage' },
   { icon: '⚙️', text: '10 Automatisierungen, individuell auf Sie abgestimmt' },
   { icon: '🎓', text: 'Persönliche Einweisung, bis alles sitzt' },
   { icon: '📄', text: 'Schriftlicher Installationsbericht für Ihre Unterlagen' },
@@ -84,9 +81,6 @@ export default function StarterSets() {
           <h2 className="section-title text-3xl md:text-4xl">
             Smart Home zum <span className="text-[#1A56E8]">Festpreis</span>
           </h2>
-          <p className="text-gray-500 text-lg mt-3 max-w-2xl mx-auto">
-            Komplett installiert, eingerichtet und erklärt. Ein Preis, ein Termin, keine Überraschungen auf der Rechnung.
-          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
