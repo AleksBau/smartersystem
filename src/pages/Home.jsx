@@ -5,7 +5,7 @@ import StarterSets from '../components/StarterSets'
 const services = [
   { icon: '💡', title: 'Beleuchtung', desc: 'Automatische Lichtsteuerung nach Tageszeit und Anwesenheit. Dimmen und Szenarien für jeden Anlass. Beschattung Ihrer Jalousie mit intelligenter Steuerung.' },
   { icon: '🌡️', title: 'Heizungssteuerung', desc: 'Intelligente Raumtemperaturregelung spart bis zu 30 % Heizkosten. Automatische Anpassung an Ihre Gewohnheiten und Zeitpläne.' },
-  { icon: '🔒', title: 'Sicherheit', desc: 'Überwachungskameras, Bewegungsmelder und smarte Türschlösser. Benachrichtigungen auf Ihr Smartphone und automatische Reaktionen bei Abwesenheit.' },
+  { icon: '🔒', title: 'Sicherheit', desc: 'Überwachungskameras, Alarmanlage und Türschlösser. Automatische Reaktionen bei Abwesenheit.' },
   { icon: '📱', title: 'App-Steuerung', desc: 'Alles in einer App: Licht, Heizung, Sicherheit und mehr. Fernsteuerung von überall, Zeitschaltungen und individuelle Automatisierungen.' },
   { icon: '🔧', title: 'Nachrüst-Installation', desc: 'Smart Home für jede Immobilie ob Haus, Wohnung, Seniorenheim oder Büro. Unsere Systeme lassen sich sauber und schnell nachrüsten ohne bauliche Eingriffe.' },
   { icon: '✨', title: 'Komfort', desc: 'Szenarien wie „Guten Morgen" oder „Urlaub" steuern automatisch alle Geräte. Sprachsteuerung und Gestensteuerung für ultimativen Komfort.' },
@@ -57,7 +57,7 @@ function FaqItem({ q, a }) {
 
 const housePoints = [
   { label: 'Beleuchtung', icon: '💡', tip: 'Automatisches Licht nach Tageszeit & Bewegung', style: { top: '50%', left: '74%' } },
-  { label: 'Sicherheit', icon: '🔑', tip: 'Smarte Türschlösser – Zutritt per App, Code oder NFC', style: { top: '62%', left: '48%' } },
+  { label: 'Sicherheit', icon: '🔑', tip: 'Smarte Alarmanlage', style: { top: '62%', left: '48%' } },
   { label: 'Kamera', icon: '📷', tip: 'HD-Überwachungskameras mit Live-Feed auf Ihr Smartphone', style: { top: '28%', left: '65%' } },
   { label: 'Klima', icon: '🌡️', tip: 'Intelligente Raumtemperatur spart bis zu 30% Energie', style: { top: '28%', left: '22%' } },
   { label: 'Rollos', icon: '🏠', tip: 'Automatische Beschattung nach Sonnenstand & Wetter', style: { top: '50%', left: '58%' } },
