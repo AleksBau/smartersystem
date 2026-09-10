@@ -25,6 +25,7 @@ const pakete = [
     claim: 'Haus & Büro',
     preis: '2.699',
     highlight: false,
+    gold: true,
     kannDas: [
       'Zentrale Steuerung für alles, auch von unterwegs',
       'Heizung im ganzen Haus oder Büro',
@@ -49,9 +50,9 @@ const enthalten = [
   { icon: '💬', text: '30 Tage kostenfreier Support per Telefon und WhatsApp' },
 ]
 
-function Check() {
+function Check({ gold }) {
   return (
-    <svg className="w-4 h-4 mt-0.5 flex-shrink-0 text-[#1A56E8]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+    <svg className={`w-4 h-4 mt-0.5 flex-shrink-0 ${gold ? 'text-[#C9A227]' : 'text-[#1A56E8]'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
     </svg>
   )
@@ -72,19 +73,21 @@ export default function StarterSets() {
           {pakete.map((p) => (
             <div
               key={p.key}
-              className={`relative rounded-2xl border transition-all duration-300 flex flex-col h-full ${
+              className={`relative rounded-2xl transition-all duration-300 flex flex-col h-full bg-white ${
                 p.highlight
-                  ? 'border-[#1A56E8] shadow-2xl lg:-mt-4 lg:mb-4 bg-white'
-                  : 'border-gray-200 shadow-sm hover:shadow-lg bg-white'
+                  ? 'border border-[#1A56E8] shadow-2xl lg:-mt-4 lg:mb-4'
+                  : p.gold
+                    ? 'border-2 border-[#C9A227] shadow-xl'
+                    : 'border border-gray-200 shadow-sm hover:shadow-lg'
               }`}
             >
               {p.highlight && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#1A56E8] text-white text-[0.7rem] font-bold tracking-widest uppercase px-4 py-1.5 rounded-full whitespace-nowrap">
-                  Beliebteste Wahl
+                  Unsere Empfehlung
                 </div>
               )}
               <div className="p-8 pb-6">
-                <div className="text-xs font-bold tracking-widest uppercase text-[#1A56E8] mb-1">{p.name}</div>
+                <div className={`text-xs font-bold tracking-widest uppercase mb-1 ${p.gold ? 'text-[#A8801A]' : 'text-[#1A56E8]'}`}>{p.name}</div>
                 <h3 className="font-playfair font-bold text-2xl text-gray-900 mb-4">{p.claim}</h3>
                 <div className="flex items-baseline gap-2 mb-1">
                   <span className="text-4xl font-bold text-gray-900">{p.preis} €</span>
@@ -97,7 +100,9 @@ export default function StarterSets() {
                   className={`block text-center font-bold px-6 py-3 rounded-xl no-underline text-sm transition-colors ${
                     p.highlight
                       ? 'bg-[#1A56E8] text-white hover:bg-[#1246C8]'
-                      : 'bg-[#F0F4FF] text-[#1A56E8] hover:bg-[#dfe8ff]'
+                      : p.gold
+                        ? 'bg-[#C9A227] text-white hover:bg-[#B08F1E]'
+                        : 'bg-[#F0F4FF] text-[#1A56E8] hover:bg-[#dfe8ff]'
                   }`}
                 >
                   Kostenlos beraten lassen
@@ -108,7 +113,7 @@ export default function StarterSets() {
                 <ul className="space-y-2.5">
                   {p.kannDas.map((i, n) => (
                     <li key={n} className="flex gap-2.5 text-sm text-gray-600 leading-snug">
-                      <Check />
+                      <Check gold={p.gold} />
                       <span>{i}</span>
                     </li>
                   ))}
