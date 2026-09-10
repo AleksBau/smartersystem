@@ -2,22 +2,6 @@ import { Link } from 'react-router-dom'
 
 const pakete = [
   {
-    key: 'S',
-    name: 'Starter',
-    claim: 'Warm & Sparsam',
-    preis: '999',
-    highlight: false,
-    kannDas: [
-      'Zentrale Steuerung für alles, auch von unterwegs',
-      'Zwei Heizkörper regeln sich selbst – Fenster auf, Heizung aus',
-      'Fenster und Türen werden überwacht',
-      'Bewegung im Innenraum wird erkannt',
-      'Alarm mit Sirene und Licht',
-      'Warnung, bevor Schimmel entsteht',
-    ],
-    nutzen: 'Heizkosten senken, Schimmel vorbeugen, Alarm bei geöffnetem Fenster.',
-  },
-  {
     key: 'M',
     name: 'Komfort',
     claim: 'Wohnung komplett',
@@ -27,7 +11,7 @@ const pakete = [
       'Zentrale Steuerung für alles, auch von unterwegs',
       'Die ganze Wohnung heizt nach Ihrem Tagesablauf',
       'Alle wichtigen Fenster und Türen werden überwacht',
-      'Bewegung im Innenraum wird erkannt',
+      'Licht geht an, wenn jemand den Raum betritt',
       'Alarm mit Sirene und Licht',
       'Licht schalten per Funktaster – an jeder Wand, ohne Kabel',
 	  'Warnung, bevor Schimmel entsteht',
@@ -39,13 +23,14 @@ const pakete = [
     key: 'L',
     name: 'Premium',
     claim: 'Haus & Büro',
-    preis: '2.249',
+    preis: '2.699',
     highlight: false,
     kannDas: [
       'Zentrale Steuerung für alles, auch von unterwegs',
       'Heizung im ganzen Haus oder Büro',
       'Fenster und Türen im gesamten Objekt überwacht',
       'Licht schaltet sich nach Anwesenheit von selbst',
+      'Innen- und Außenkamera mit Live-Bild aufs Smartphone',
       'Sicherheit auf hohem Level',
       'Panikknopf für den Ernstfall',
       'Vernetzte Rauchwarnmelder',
@@ -83,7 +68,7 @@ export default function StarterSets() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start max-w-4xl mx-auto">
           {pakete.map((p) => (
             <div
               key={p.key}
