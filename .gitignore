@@ -30,3 +30,5 @@ Thumbs.db
 # Cache
 .cache/
 .eslintcache
+# Server-Geheimnis, nicht versionieren
+server/.contact-salt

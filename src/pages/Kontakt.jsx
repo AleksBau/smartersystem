@@ -4,30 +4,34 @@ import { Link } from 'react-router-dom'
 export default function Kontakt() {
   const formRef = useRef()
   const [status, setStatus] = useState('idle') // idle | loading | success | error
-  const [privacy, setPrivacy] = useState(false)
-  const [newsletter, setNewsletter] = useState(false)
 
   async function handleSubmit(e) {
     e.preventDefault()
-    if (!privacy) return
-
-    setStatus('loading')
+    if (status === 'loading') return
 
     const data = new FormData(formRef.current)
+
+    // Spam-Falle: Das Feld ist für Menschen unsichtbar. Nur Bots füllen es aus.
+    if (data.get('website')) {
+      setStatus('success')
+      formRef.current.reset()
+      return
+    }
+
+    setStatus('loading')
 
     try {
       const res = await fetch('https://web.smartersystem.de/contact.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          company:    data.get('company') || '–',
-          fname:      data.get('fname'),
-          lname:      data.get('lname'),
-          email:      data.get('email'),
-          phone:      data.get('phone') || '–',
-          zip:        data.get('zip') || '–',
-          message:    data.get('message') || '–',
-          newsletter: newsletter ? 'Ja' : 'Nein',
+          company: data.get('company') || '',
+          fname:   data.get('fname'),
+          lname:   data.get('lname'),
+          email:   data.get('email'),
+          phone:   data.get('phone') || '',
+          zip:     data.get('zip') || '',
+          message: data.get('message') || '',
         })
       })
 
@@ -35,8 +39,6 @@ export default function Kontakt() {
       if (json.success) {
         setStatus('success')
         formRef.current.reset()
-        setPrivacy(false)
-        setNewsletter(false)
       } else {
         setStatus('error')
       }
@@ -67,7 +69,7 @@ export default function Kontakt() {
             <p className="text-gray-500 leading-relaxed mb-8">Ob per Telefon, WhatsApp oder Formular – wir sind für Sie da und melden uns schnell zurück.</p>
             
             {[
-              { icon: '📱', label: 'Telefon & WhatsApp', value: '+49 155 063 989 382', href: 'tel:+4915563989382' },
+              { icon: '📱', label: 'Telefon & WhatsApp', value: '+49 15563 989382', href: 'tel:+4915563989382' },
               { icon: '✉️', label: 'E-Mail', value: 'info@smartersystem.de', href: 'mailto:info@smartersystem.de' },
               { icon: '🕐', label: 'Erreichbarkeit', value: 'Montag bis Freitag 9–18 Uhr', href: null },
             ].map((card, i) => (
@@ -88,7 +90,7 @@ export default function Kontakt() {
 
             <div className="rounded-2xl p-4 flex items-center gap-4 mt-4"
               style={{ background: 'linear-gradient(135deg, #0B1B4D, #1A56E8)' }}>
-              <div className="text-3xl">🗱</div>
+              <div className="text-3xl">💬</div>
               <div>
                 <span className="block text-[#38BDF8] text-[0.7rem] font-bold uppercase tracking-widest">Schnellste Option</span>
                 <p className="text-white font-medium text-sm m-0">WhatsApp-Nachricht – oft in Minuten beantwortet</p>
@@ -100,11 +102,11 @@ export default function Kontakt() {
           <div className="bg-white rounded-3xl p-8 shadow-xl" style={{ boxShadow: '0 20px 60px rgba(26,86,232,0.1)' }}>
             <h3 className="font-playfair font-bold text-gray-900 text-2xl mb-7">Anfrage senden</h3>
             
-            <form ref={formRef} onSubmit={handleSubmit}>
+            <form ref={formRef} onSubmit={handleSubmit} className="relative">
               {/* Company */}
               <div className="mb-4">
                 <label className="block text-xs font-semibold text-gray-800 mb-1.5">Unternehmen (optional)</label>
-                <input name="company" type="text" placeholder="Ihr Unternehmen"
+                <input name="company" type="text" placeholder="Ihr Unternehmen" maxLength={100}
                   className="w-full px-4 py-3 rounded-xl border-[1.5px] border-gray-200 bg-[#F0F4FF] text-gray-900 text-sm outline-none focus:border-[#1A56E8] focus:bg-white focus:ring-4 focus:ring-[#1A56E8]/8 transition-all" />
               </div>
 
@@ -112,12 +114,12 @@ export default function Kontakt() {
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div>
                   <label className="block text-xs font-semibold text-gray-800 mb-1.5">Vorname *</label>
-                  <input name="fname" type="text" placeholder="Max" required
+                  <input name="fname" type="text" placeholder="Max" required maxLength={60}
                     className="w-full px-4 py-3 rounded-xl border-[1.5px] border-gray-200 bg-[#F0F4FF] text-gray-900 text-sm outline-none focus:border-[#1A56E8] focus:bg-white focus:ring-4 focus:ring-[#1A56E8]/8 transition-all" />
                 </div>
                 <div>
                   <label className="block text-xs font-semibold text-gray-800 mb-1.5">Nachname *</label>
-                  <input name="lname" type="text" placeholder="Mustermann" required
+                  <input name="lname" type="text" placeholder="Mustermann" required maxLength={60}
                     className="w-full px-4 py-3 rounded-xl border-[1.5px] border-gray-200 bg-[#F0F4FF] text-gray-900 text-sm outline-none focus:border-[#1A56E8] focus:bg-white focus:ring-4 focus:ring-[#1A56E8]/8 transition-all" />
                 </div>
               </div>
@@ -126,12 +128,12 @@ export default function Kontakt() {
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div>
                   <label className="block text-xs font-semibold text-gray-800 mb-1.5">E-Mail-Adresse *</label>
-                  <input name="email" type="email" placeholder="max@beispiel.de" required
+                  <input name="email" type="email" placeholder="max@beispiel.de" required maxLength={120}
                     className="w-full px-4 py-3 rounded-xl border-[1.5px] border-gray-200 bg-[#F0F4FF] text-gray-900 text-sm outline-none focus:border-[#1A56E8] focus:bg-white focus:ring-4 focus:ring-[#1A56E8]/8 transition-all" />
                 </div>
                 <div>
                   <label className="block text-xs font-semibold text-gray-800 mb-1.5">Telefon</label>
-                  <input name="phone" type="tel" placeholder="+49 ..."
+                  <input name="phone" type="tel" placeholder="+49 ..." maxLength={30}
                     className="w-full px-4 py-3 rounded-xl border-[1.5px] border-gray-200 bg-[#F0F4FF] text-gray-900 text-sm outline-none focus:border-[#1A56E8] focus:bg-white focus:ring-4 focus:ring-[#1A56E8]/8 transition-all" />
                 </div>
               </div>
@@ -139,43 +141,34 @@ export default function Kontakt() {
               {/* ZIP */}
               <div className="mb-4">
                 <label className="block text-xs font-semibold text-gray-800 mb-1.5">Postleitzahl der Immobilie</label>
-                <input name="zip" type="text" placeholder="10115"
+                <input name="zip" type="text" placeholder="10115" maxLength={10} inputMode="numeric" pattern="[0-9]{5}"
                   className="w-full px-4 py-3 rounded-xl border-[1.5px] border-gray-200 bg-[#F0F4FF] text-gray-900 text-sm outline-none focus:border-[#1A56E8] focus:bg-white focus:ring-4 focus:ring-[#1A56E8]/8 transition-all" />
               </div>
 
               {/* Message */}
               <div className="mb-4">
                 <label className="block text-xs font-semibold text-gray-800 mb-1.5">Ihre Nachricht</label>
-                <textarea name="message" rows={4} placeholder="Beschreiben Sie kurz, was Sie sich vorstellen …"
+                <textarea name="message" rows={4} maxLength={3000} placeholder="Beschreiben Sie kurz, was Sie sich vorstellen …"
                   className="w-full px-4 py-3 rounded-xl border-[1.5px] border-gray-200 bg-[#F0F4FF] text-gray-900 text-sm outline-none focus:border-[#1A56E8] focus:bg-white focus:ring-4 focus:ring-[#1A56E8]/8 transition-all resize-y min-h-[100px]" />
               </div>
 
-              {/* Privacy */}
-              <label className="flex items-start mb-3 cursor-pointer text-sm text-gray-500 leading-relaxed">
-                <input
-                  type="checkbox"
-                  checked={privacy}
-                  onChange={e => setPrivacy(e.target.checked)}
-                  className="w-4 h-4 flex-shrink-0 mt-0.5 accent-[#1A56E8]"
-                  required
-                />
-                <span className="ml-2 min-w-0">
-                  Ich habe die{" "}
-                  <Link to="/datenschutz" className="text-[#1A56E8] underline">
-                    Datenschutzerklärung
-                  </Link>{" "}
-                  gelesen und bin damit einverstanden. *
-                </span>
-              </label>
+              {/* Spam-Falle – für Menschen unsichtbar, kein Pflichtfeld */}
+              <div
+                aria-hidden="true"
+                style={{ position: 'absolute', width: '1px', height: '1px', overflow: 'hidden', clip: 'rect(0 0 0 0)', whiteSpace: 'nowrap', border: 0, padding: 0, margin: '-1px' }}
+              >
+                <label htmlFor="website">Website</label>
+                <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+              </div>
 
-              {/* Newsletter */}
-              <label className="flex items-start gap-2.5 mb-6 cursor-pointer text-sm text-gray-500 leading-relaxed">
-                <input type="checkbox" checked={newsletter} onChange={e => setNewsletter(e.target.checked)}
-                  className="w-4 h-4 flex-shrink-0 mt-0.5 accent-[#1A56E8]" />
-                Ich möchte aktuelle News und Angebote von Sky Way Technology erhalten. (Kann jederzeit abbestellt werden.)
-              </label>
+              {/* Datenschutzhinweis – Information, keine Einwilligung */}
+              <p className="text-xs text-gray-400 leading-relaxed mb-6">
+                Ihre Angaben verwenden wir ausschließlich, um Ihre Anfrage zu bearbeiten. Wie lange wir sie
+                speichern und welche Rechte Sie haben, steht in unserer{" "}
+                <Link to="/datenschutz" className="text-[#1A56E8] underline">Datenschutzerklärung</Link>.
+              </p>
 
-              <button type="submit" disabled={status === 'loading' || !privacy}
+              <button type="submit" disabled={status === 'loading'}
                 className="w-full py-4 bg-[#1A56E8] text-white rounded-xl font-playfair font-bold text-base cursor-pointer transition-all hover:bg-[#0F3BAA] hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed shadow-lg hover:shadow-xl"
                 style={{ boxShadow: '0 8px 24px rgba(26,86,232,0.3)' }}>
                 {status === 'loading' ? 'Wird gesendet…' : 'Anfrage senden →'}
