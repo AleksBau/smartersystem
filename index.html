@@ -4,10 +4,90 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Smarter System – Ihr Zuhause. Nur Smarter.</title>
+
+    <!-- Titel, Beschreibung und kanonische Adresse werden beim Bauen je Seite ersetzt. -->
+    <title>Smart Home Berlin zum Festpreis | Smarter System</title>
+    <meta name="description" content="Smart Home für Wohnung, Haus und Büro in Berlin. Komplettpakete ab 1.249 € inklusive Montage, Einrichtung und Einweisung. Beratung vor Ort kostenlos." />
+    <link rel="canonical" href="https://smartersystem.de/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Smarter System" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:title" content="Smart Home Berlin zum Festpreis | Smarter System" />
+    <meta property="og:description" content="Smart Home für Wohnung, Haus und Büro in Berlin. Komplettpakete ab 1.249 € inklusive Montage, Einrichtung und Einweisung. Beratung vor Ort kostenlos." />
+    <meta property="og:url" content="https://smartersystem.de/" />
+    <meta property="og:image" content="https://smartersystem.de/logo.png" />
+    <meta name="twitter:card" content="summary" />
+
     <link rel="preload" href="/fonts/playfair-display-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!--
+      Maschinenlesbarer Steckbrief des Betriebs. Suchmaschinen lesen daraus
+      Name, Anschrift, Telefonnummer, Öffnungszeiten und Einzugsgebiet.
+      Alle Angaben müssen mit dem Impressum und dem Google-Unternehmensprofil
+      übereinstimmen, sonst wertet Google sie ab.
+    -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://smartersystem.de/#betrieb",
+          "name": "Smarter System",
+          "alternateName": "Smarter System – Aleksandar Vukanovic",
+          "description": "Smart-Home-Nachrüstung in Berlin. Heizungssteuerung, Beleuchtung, Sicherheitstechnik und Automatisierung mit Homematic IP, zum Festpreis inklusive Montage und Einweisung.",
+          "url": "https://smartersystem.de",
+          "telephone": "+4915563989382",
+          "email": "info@smartersystem.de",
+          "image": "https://smartersystem.de/logo.png",
+          "logo": "https://smartersystem.de/logo.png",
+          "priceRange": "€€",
+          "currenciesAccepted": "EUR",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Eisackstraße 37",
+            "postalCode": "10827",
+            "addressLocality": "Berlin",
+            "addressRegion": "Berlin",
+            "addressCountry": "DE"
+          },
+          "areaServed": [
+            { "@type": "City", "name": "Berlin" },
+            { "@type": "AdministrativeArea", "name": "Brandenburg" }
+          ],
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "09:00",
+              "closes": "18:00"
+            }
+          ],
+          "founder": { "@type": "Person", "name": "Aleksandar Vukanovic" },
+          "knowsAbout": [
+            "Smart Home",
+            "Homematic IP",
+            "Heizungssteuerung",
+            "Einbruchschutz",
+            "Rauchwarnmelder",
+            "Gebäudeautomation"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://smartersystem.de/#website",
+          "url": "https://smartersystem.de",
+          "name": "Smarter System",
+          "inLanguage": "de-DE",
+          "publisher": { "@id": "https://smartersystem.de/#betrieb" }
+        }
+      ]
+    }
+    </script>
+
     <script>
-      // GitHub Pages SPA routing: restore path from query string
+      // Faengt Adressen ab, fuer die keine eigene Datei abgelegt wurde.
       (function() {
         var p = window.location.search.slice(1);
         if (p.startsWith('p=')) {

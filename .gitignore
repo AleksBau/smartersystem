@@ -33,3 +33,4 @@ Thumbs.db
 # Server-Geheimnis, nicht versionieren
 server/contact-config.php
 server/.contact-salt
+dist-ssr
