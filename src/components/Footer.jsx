@@ -8,7 +8,7 @@ export default function Footer() {
           <h4 className="font-playfair font-bold text-white mb-4 text-sm">Navigation</h4>
           <ul className="flex flex-col gap-2 list-none">
             <li><Link to="/" className="text-white/60 hover:text-[#38BDF8] transition-colors text-sm no-underline">Startseite</Link></li>
-            <li><a href="/#leistungen" className="text-white/60 hover:text-[#38BDF8] transition-colors text-sm no-underline">Leistungen</a></li>
+            <li><Link to="/leistungen" className="text-white/60 hover:text-[#38BDF8] transition-colors text-sm no-underline">Leistungen</Link></li>
             <li><a href="/#prozess" className="text-white/60 hover:text-[#38BDF8] transition-colors text-sm no-underline">Prozess</a></li>
             <li><a href="/#faq" className="text-white/60 hover:text-[#38BDF8] transition-colors text-sm no-underline">FAQ</a></li>
           </ul>

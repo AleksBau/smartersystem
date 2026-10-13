@@ -3,6 +3,8 @@ import Home from './pages/Home'
 import Kontakt from './pages/Kontakt'
 import Impressum from './pages/Impressum'
 import Datenschutz from './pages/Datenschutz'
+import Leistungen from './pages/Leistungen'
+import Leistung from './pages/Leistung'
 import Layout from './components/Layout'
 
 /**
@@ -17,6 +19,8 @@ export default function AppRoutes() {
     <Routes>
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
+        <Route path="/leistungen" element={<Leistungen />} />
+        <Route path="/leistungen/:slug" element={<Leistung />} />
         <Route path="/kontakt" element={<Kontakt />} />
         <Route path="/impressum" element={<Impressum />} />
         <Route path="/datenschutz" element={<Datenschutz />} />

@@ -1,10 +1,12 @@
+import { leistungen } from './data/leistungen'
+
 /**
  * Eine einzige Quelle für alles, was Suchmaschinen über die Seiten wissen.
  *
  * Wird an drei Stellen benutzt:
  *   1. beim Vorab-Rendern, um je Seite Titel und Beschreibung einzusetzen
  *   2. beim Erzeugen der sitemap.xml
- *   3. in der Navigation, damit Leistungsseiten nicht doppelt gepflegt werden
+ *   3. für die Frage-und-Antwort-Daten der Leistungsseiten
  *
  * Titel: höchstens etwa 60 Zeichen, sonst kürzt Google ab.
  * Beschreibung: 140 bis 160 Zeichen, mit einem Grund zu klicken.
@@ -22,13 +24,20 @@ export const SITE = {
   ort: 'Berlin',
 };
 
-export const seiten = [
+const feste = [
   {
     pfad: '/',
     titel: 'Smart Home Berlin zum Festpreis | Smarter System',
     beschreibung:
       'Smart Home für Wohnung, Haus und Büro in Berlin. Komplettpakete ab 1.249 € inklusive Montage, Einrichtung und Einweisung. Beratung vor Ort kostenlos.',
     prioritaet: '1.0',
+  },
+  {
+    pfad: '/leistungen',
+    titel: 'Leistungen | Smart Home nachrüsten in Berlin',
+    beschreibung:
+      'Heizungssteuerung, Alarmanlage, Lichtsteuerung, Rauchwarnmelder, Kameras und Wartung. Smart Home in Berlin nachrüsten – ohne Umbau, zum Festpreis.',
+    prioritaet: '0.9',
   },
   {
     pfad: '/kontakt',
@@ -42,7 +51,6 @@ export const seiten = [
     titel: 'Impressum | Smarter System',
     beschreibung: 'Anbieterkennzeichnung nach § 5 Digitale-Dienste-Gesetz für Smarter System, Berlin.',
     prioritaet: '0.2',
-    nichtIndexieren: false,
   },
   {
     pfad: '/datenschutz',
@@ -52,6 +60,19 @@ export const seiten = [
     prioritaet: '0.2',
   },
 ];
+
+// Aus jeder Leistung wird automatisch eine eigene Seite. So kann die Liste in
+// data/leistungen.js wachsen, ohne dass hier etwas nachgetragen werden muss.
+const ausLeistungen = leistungen.map((l) => ({
+  pfad: `/leistungen/${l.slug}`,
+  titel: l.titel,
+  beschreibung: l.beschreibung,
+  prioritaet: '0.9',
+  faq: l.faq,
+  leistungsName: l.h1,
+}));
+
+export const seiten = [...feste, ...ausLeistungen];
 
 /** Findet die Angaben zu einem Pfad, mit der Startseite als Rückfallebene. */
 export function seiteZuPfad(pfad) {

@@ -11,7 +11,7 @@ export default function Navbar() {
       {/* Desktop nav */}
       <ul className="hidden md:flex gap-5 list-none">
         <li><a href="/#start" className="text-xs font-medium text-gray-800 hover:text-[#1A56E8] transition-colors no-underline">Startseite</a></li>
-        <li><a href="/#leistungen" className="text-xs font-medium text-gray-800 hover:text-[#1A56E8] transition-colors no-underline">Leistungen</a></li>
+        <li><Link to="/leistungen" className="text-xs font-medium text-gray-800 hover:text-[#1A56E8] transition-colors no-underline">Leistungen</Link></li>
         <li><a href="/#prozess" className="text-xs font-medium text-gray-800 hover:text-[#1A56E8] transition-colors no-underline">Prozess</a></li>
         <li><a href="/#faq" className="text-xs font-medium text-gray-800 hover:text-[#1A56E8] transition-colors no-underline">FAQ</a></li>
       </ul>
@@ -31,7 +31,7 @@ export default function Navbar() {
         <div className="absolute top-full left-0 right-0 bg-white border-b border-gray-200 shadow-lg md:hidden">
           <div className="flex flex-col px-[4%] py-3 gap-3">
             <NavLink to="/" end onClick={() => setOpen(false)} className="text-xs font-medium text-gray-800 no-underline">Startseite</NavLink>
-            <a href="/#leistungen" onClick={() => setOpen(false)} className="text-xs font-medium text-gray-800 no-underline">Leistungen</a>
+            <Link to="/leistungen" onClick={() => setOpen(false)} className="text-xs font-medium text-gray-800 no-underline">Leistungen</Link>
             <a href="/#prozess" onClick={() => setOpen(false)} className="text-xs font-medium text-gray-800 no-underline">Prozess</a>
             <a href="/#faq" onClick={() => setOpen(false)} className="text-xs font-medium text-gray-800 no-underline">FAQ</a>
             <Link to="/kontakt" onClick={() => setOpen(false)} className="btn-primary text-xs text-center py-1.5">Kontakt &amp; Angebot</Link>

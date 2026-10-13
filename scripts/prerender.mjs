@@ -61,6 +61,39 @@ async function main() {
       throw new Error('Einhaengepunkt nicht gefunden fuer ' + seite.pfad);
     }
 
+    // Auf Leistungsseiten zusaetzlich die Leistung selbst und die haeufigen
+    // Fragen maschinenlesbar mitgeben. Google zeigt solche Fragen teils direkt
+    // im Suchergebnis an, was den Platz in der Trefferliste vergroessert.
+    if (seite.faq && seite.faq.length) {
+      const daten = {
+        '@context': 'https://schema.org',
+        '@graph': [
+          {
+            '@type': 'Service',
+            '@id': adresse + '#leistung',
+            name: seite.leistungsName,
+            description: seite.beschreibung,
+            url: adresse,
+            provider: { '@id': SITE.url + '/#betrieb' },
+            areaServed: { '@type': 'City', name: 'Berlin' },
+          },
+          {
+            '@type': 'FAQPage',
+            '@id': adresse + '#fragen',
+            mainEntity: seite.faq.map((f) => ({
+              '@type': 'Question',
+              name: f.frage,
+              acceptedAnswer: { '@type': 'Answer', text: f.antwort },
+            })),
+          },
+        ],
+      };
+      ausgabe = ausgabe.replace(
+        '</head>',
+        `    <script type="application/ld+json">${JSON.stringify(daten)}</script>\n  </head>`
+      );
+    }
+
     if (seite.pfad === '/') {
       fs.writeFileSync(path.join(DIST, 'index.html'), ausgabe, 'utf8');
       erzeugt.push({ pfad: '/', datei: 'dist/index.html', zeichen: ausgabe.length });
