@@ -25,11 +25,8 @@ const sections = [
       <p className="text-gray-500 text-sm leading-relaxed"><strong>Datenübermittlung in die USA:</strong> Der Anbieter ist ein US-Unternehmen, sodass eine Verarbeitung in einem Drittland stattfinden kann. Die Übermittlung erfolgt auf Grundlage der Standarddatenschutzklauseln der EU-Kommission nach Art. 46 Abs. 2 lit. c DSGVO beziehungsweise, soweit der Anbieter zertifiziert ist, auf Grundlage des EU-US Data Privacy Framework nach Art. 45 DSGVO. Ein Zugriff von US-Behörden auf diese Daten lässt sich nicht vollständig ausschließen.</p>
     </>
   )},
-  { title: 'Schriftarten', content: (
-    <>
-      <p className="text-gray-500 text-sm leading-relaxed mb-3">Für die Darstellung der Texte verwenden wir die Schriftarten Inter und Playfair Display. Diese werden beim Seitenaufruf von Servern der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland, geladen. Dabei wird Ihre IP-Adresse an Google übermittelt; eine Übermittlung an die Google LLC in den USA ist möglich. Cookies werden hierbei nach Angaben des Anbieters nicht gesetzt.</p>
-      <p className="text-gray-500 text-sm leading-relaxed"><strong>Zweck:</strong> einheitliche und gut lesbare Darstellung der Website<br /><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer ansprechenden Darstellung)<br /><strong>Speicherdauer:</strong> Wir speichern in diesem Zusammenhang selbst keine Daten.</p>
-    </>
+  { title: 'Keine eingebundenen Dienste Dritter', content: (
+    <p className="text-gray-500 text-sm leading-relaxed">Beim Aufruf dieser Seiten wird keine Verbindung zu Servern Dritter aufgebaut. Wir binden keine fremden Schriftarten, Karten, Videos, Schaltflächen sozialer Netzwerke oder Werbenetzwerke ein. Die verwendete Schriftart liefern wir von unserem eigenen Server aus, sodass dabei keine Daten an Dritte übertragen werden.</p>
   )},
   { title: 'Kontaktformular', content: (
     <>
