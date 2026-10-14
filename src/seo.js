@@ -36,7 +36,7 @@ const feste = [
     pfad: '/leistungen',
     titel: 'Leistungen im Überblick | Berlin & Brandenburg',
     beschreibung:
-      'Heizung, Licht und Beschattung, Alarm, Kameras, Rauchwarnmelder, Schaltertausch und Wartung. Smart Home nachrüsten ohne Umbau, zum Festpreis.',
+      'Heizung, Licht und Beschattung, Alarm, Kameras, Rauchwarnmelder, Schaltertausch und Wartung. Smart Home nachrüsten ohne neue Leitungen, zum Festpreis.',
     prioritaet: '0.9',
   },
   {

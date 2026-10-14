@@ -9,7 +9,7 @@ const services = [
   { icon: '🌡️', title: 'Heizungssteuerung', zu: '/leistungen/heizungssteuerung', desc: 'Jeder Raum nach Zeitplan statt nach Gefühl. Spart spürbar Heizkosten – in Wohnungen, Büros und Einrichtungen.' },
   { icon: '💡', title: 'Licht & Beschattung', zu: '/leistungen/licht-und-beschattung', desc: 'Vorhandene Schalter werden smart, zusätzliche Taster kommen überall hin. Rollläden fahren nach Sonnenstand.' },
   { icon: '🔔', title: 'Alarm & Einbruchschutz', zu: '/leistungen/alarmanlage', desc: 'Fenster und Türen überwacht, Sirene und Licht im Alarmfall, Nachricht aufs Handy in Sekunden.' },
-  { icon: '📹', title: 'Kameras', zu: '/leistungen/videoueberwachung', desc: 'Innen und außen, mit Live-Bild aufs Smartphone. Mit Akku oder Stecker, ohne Kabel durch die Wand.' },
+  { icon: '📹', title: 'Kameras', zu: '/leistungen/videoueberwachung', desc: 'Innen und außen, mit Live-Bild aufs Smartphone. Mit Akku oder Steckernetzteil, ohne feste Elektroinstallation.' },
   { icon: '🚨', title: 'Rauchwarnmelder', zu: '/leistungen/rauchwarnmelder', desc: 'Vernetzt, damit alle gemeinsam anschlagen. Montage nach DIN 14676 mit schriftlichem Protokoll.' },
   { icon: '🛠️', title: 'Wartung & Support', zu: '/leistungen/wartung', desc: 'Batterien, Aktualisierungen, neue Automatisierungen. Ein Ansprechpartner, der Ihre Anlage kennt.' },
 ]
@@ -17,14 +17,14 @@ const services = [
 const steps = [
   { num: '1', icon: '🔍', title: 'Bedarfsanalyse', desc: 'In einer kostenlosen Erstberatung besprechen wir Ihre Wünsche und die baulichen Gegebenheiten.' },
   { num: '2', icon: '📋', title: 'Individuelle Planung', desc: 'Wir erstellen ein passgenaues Konzept mit dem Ziel Ihre Erwartungen zu übertreffen.' },
-  { num: '3', icon: '🛠️', title: 'Fachgerechte Montage', desc: 'Die Installation erfolgt professionell und ohne Änderungen an der Bausubstanz.' },
+  { num: '3', icon: '🛠️', title: 'Fachgerechte Montage', desc: 'Wir verlegen keine Leitungen und stemmen keine Schlitze. Wo gebohrt werden muss, stimmen wir die Stellen vorher mit Ihnen ab.' },
   { num: '4', icon: '🎓', title: 'Einweisung & Übergabe', desc: 'Sie erhalten eine gute Einweisung in die Bedienung Ihres Smart Homes. Die einfache und selbsterklärende Handhabung der App ist uns wichtig.' },
 ]
 
 const faqs = [
   {
     q: 'Benötige ich für die Installation die Erlaubnis meines Vermieters?',
-    a: 'Da ausschließlich moderne Funktechnologie eingesetzt wird, entfallen bauliche Maßnahmen wie das Klopfen von Schlitzen oder das Verlegen von Kabeln vollständig.'
+    a: 'Für die meisten Komponenten nicht: Sie funken, werden geklebt oder eingesteckt. Es werden keine Schlitze gestemmt und keine Leitungen verlegt. Gedübelt wird nur dort, wo ein Gerät sicher halten muss, etwa bei Bewegungsmeldern, Sirenen und Kameras. Wird ein vorhandener Wandschalter getauscht, sollten Sie Ihren Vermieter vorher einbeziehen – wir sagen Ihnen, was Sie dafür fragen müssen.'
   },
   {
     q: 'Welche Voraussetzungen müssen vor Ort gegeben sein?',
@@ -58,13 +58,15 @@ function FaqItem({ q, a }) {
   )
 }
 
+// Die Punkte am Haus entsprechen den sechs Leistungen und führen auf die
+// jeweilige Seite. Symbole und Namen sind dieselben wie auf den Karten.
 const housePoints = [
-  { label: 'Beleuchtung', icon: '💡', tip: 'Automatisches Licht nach Tageszeit & Bewegung', style: { top: '50%', left: '74%' } },
-  { label: 'Sicherheit', icon: '🔔', tip: 'Alarmanlage mit Absicherung von Fenstern und Türen', style: { top: '62%', left: '48%' } },
-  { label: 'Kamera', icon: '📷', tip: 'HD-Überwachungskameras mit Live-Feed auf Ihr Smartphone', style: { top: '28%', left: '65%' } },
-  { label: 'Klima', icon: '🌡️', tip: 'Intelligente Raumtemperatur spart bis zu 30% Energie', style: { top: '28%', left: '22%' } },
-  { label: 'Rollos', icon: '🏠', tip: 'Automatische Beschattung nach Sonnenstand & Wetter', style: { top: '50%', left: '58%' } },
-  { label: 'Entertainment', icon: '🎵', tip: 'Multiroom-Audio und vernetzte Unterhaltung durch das ganze Haus', style: { top: '50%', left: '20%' } },
+  { label: 'Heizung', icon: '🌡️', zu: '/leistungen/heizungssteuerung', tip: 'Jeder Raum nach Zeitplan statt nach Gefühl', style: { top: '28%', left: '22%' } },
+  { label: 'Rauchmelder', icon: '🚨', zu: '/leistungen/rauchwarnmelder', tip: 'Vernetzt, damit alle gemeinsam anschlagen', style: { top: '50%', left: '20%' } },
+  { label: 'Beschattung', icon: '🪟', zu: '/leistungen/licht-und-beschattung', tip: 'Rollläden und Jalousien nach Sonnenstand', style: { top: '50%', left: '58%' } },
+  { label: 'Licht', icon: '💡', zu: '/leistungen/licht-und-beschattung', tip: 'Licht nach Anwesenheit, Schalter an jeder Wand', style: { top: '50%', left: '74%' } },
+  { label: 'Alarm', icon: '🔔', zu: '/leistungen/alarmanlage', tip: 'Fenster und Türen überwacht, Sirene im Alarmfall', style: { top: '62%', left: '48%' } },
+  { label: 'Kamera', icon: '📹', zu: '/leistungen/videoueberwachung', tip: 'Live-Bild aufs Smartphone, innen wie außen', style: { top: '28%', left: '65%' } },
 ]
 
 export default function Home() {
@@ -169,7 +171,7 @@ export default function Home() {
 
             {/* Interactive hotspots */}
             {housePoints.map((p, i) => (
-              <div key={i} className="absolute group" style={p.style}>
+              <Link key={i} to={p.zu} aria-label={p.label} className="absolute group no-underline" style={p.style}>
                 <div className="flex flex-col items-center gap-1 cursor-pointer">
                   <div className="w-11 h-11 bg-white/20 backdrop-blur-sm border-2 border-white/50 rounded-full grid place-items-center text-lg
                     shadow-lg transition-all group-hover:bg-[#1A56E8]/85 group-hover:border-white/80 group-hover:scale-110">
@@ -183,10 +185,10 @@ export default function Home() {
                     <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#1A56E8]/95" />
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
-          <p className="text-center text-gray-400 text-sm mt-4">↑ Bewegen Sie die Maus über die Icons für Details</p>
+          <p className="text-center text-gray-400 text-sm mt-4">↑ Tippen oder klicken Sie auf ein Symbol für mehr dazu</p>
         </div>
       </section>
 

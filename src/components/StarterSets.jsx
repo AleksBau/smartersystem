@@ -13,7 +13,7 @@ const pakete = [
       'Alle wichtigen Fenster und Türen werden überwacht',
       'Licht geht an, wenn jemand den Raum betritt',
       'Alarm mit Sirene und Licht',
-      'Licht schalten per Funktaster – an jeder Wand, ohne Kabel',
+      'Licht schalten per Funktaster – auch dort, wo kein Schalter sitzt',
 	  'Warnung, bevor Schimmel entsteht',
       'Nachricht, wenn die Waschmaschine fertig ist',
     ],

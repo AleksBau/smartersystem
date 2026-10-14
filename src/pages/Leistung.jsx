@@ -4,7 +4,7 @@ import { leistungen, leistungZuSlug, EINZUGSGEBIET } from '../data/leistungen'
 const ablauf = [
   { nr: '1', titel: 'Kostenloser Termin vor Ort', text: 'Wir sehen uns Ihre Räume an, hören zu und sagen Ihnen offen, was sinnvoll ist und was nicht.' },
   { nr: '2', titel: 'Festpreis-Angebot', text: 'Sie bekommen ein schriftliches Angebot mit allen Geräten und der Montage. Keine Überraschungen hinterher.' },
-  { nr: '3', titel: 'Montage an einem Tag', text: 'In der Regel ist alles an einem Arbeitstag fertig – ohne Dreck, ohne Stemmen, ohne Kabelverlegung.' },
+  { nr: '3', titel: 'Montage an einem Tag', text: 'In der Regel ist alles an einem Arbeitstag fertig. Es werden keine Leitungen verlegt und keine Wände aufgestemmt. Wo gebohrt werden muss, sagen wir es vorher und räumen hinter uns auf.' },
   { nr: '4', titel: 'Einweisung, bis es sitzt', text: 'Wir gehen alles mit Ihnen durch, bis Sie es selbst bedienen können. Danach 30 Tage Support inklusive.' },
 ]
 

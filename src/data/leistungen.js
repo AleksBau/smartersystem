@@ -54,7 +54,7 @@ export const leistungen = [
     komponenten: [
       'Funk-Thermostatkopf je Heizkörper, batteriebetrieben, auf das vorhandene Ventil geschraubt',
       'Wandthermostat für Räume, in denen dort gemessen werden soll, wo Menschen sitzen',
-      'Fenster- und Türkontakte in Klebemontage, ohne Bohren',
+      'Fenster- und Türkontakte, in der Regel in Klebemontage',
       'Zentrale für Zeitprofile, Auswertung und Zugriff von unterwegs',
       'Auf Wunsch Bediensperre, damit Einstellungen in öffentlich zugänglichen Räumen nicht verstellt werden',
     ],
@@ -108,8 +108,8 @@ export const leistungen = [
         text: 'Sie bekommen die Meldung sofort, ob Sie im Büro sind oder im Urlaub. Sie sehen, welches Fenster ausgelöst hat, und können entscheiden, wen Sie anrufen.',
       },
       {
-        titel: 'Ohne Kabel, ohne Dreck',
-        text: 'Alle Komponenten funken und laufen mit Batterie oder Stecker. Es wird nichts gestemmt, nichts verlegt, nichts verputzt. Eine Wohnung ist in der Regel an einem Arbeitstag fertig.',
+        titel: 'Keine Leitungen durch die Wohnung',
+        text: 'Die Komponenten funken untereinander und laufen mit Batterie oder Stecker. Es wird keine Leitung verlegt und keine Wand aufgestemmt. Gebohrt wird dort, wo ein Gerät sicher halten muss: Sirene und Bewegungsmelder werden gedübelt, Fenster- und Türkontakte meist nur geklebt. Welche Stellen das sind, legen wir vor der Montage gemeinsam fest.',
       },
       {
         titel: 'Auch wenn niemand da ist',
@@ -117,7 +117,7 @@ export const leistungen = [
       },
     ],
     komponenten: [
-      'Fenster- und Türkontakte an allen gefährdeten Öffnungen, in Klebemontage',
+      'Fenster- und Türkontakte an allen gefährdeten Öffnungen, meist in Klebemontage',
       'Innensirene mit Steckernetzteil, zusätzlich optische Signalgebung',
       'Bewegungsmelder für Flure und Durchgangsräume',
       'Fernbedienung oder Taster zum Scharf- und Unscharfschalten',
@@ -125,9 +125,9 @@ export const leistungen = [
     ],
     faq: [
       {
-        frage: 'Muss ich dafür Löcher bohren?',
+        frage: 'Muss dafür gebohrt werden?',
         antwort:
-          'In der Regel nicht. Die Kontakte werden geklebt, die Sirene kommt an eine Steckdose. Wo ein Gerät zwingend verschraubt werden sollte, besprechen wir das vorher mit Ihnen.',
+          'Für einen Teil der Geräte ja. Fenster- und Türkontakte werden in der Regel geklebt. Bewegungsmelder und Sirene müssen dauerhaft sicher halten und werden deshalb gedübelt – das sind wenige kleine Löcher, die sich beim Rückbau leicht schließen lassen. Wo gebohrt wird, stimmen wir vor der Montage mit Ihnen ab.',
       },
       {
         frage: 'Geht die Anlage bei jeder Katze los?',
@@ -289,10 +289,10 @@ export const leistungen = [
     h1: 'Kameras',
     titel: 'Überwachungskamera installieren | Berlin & Brandenburg',
     beschreibung:
-      'Innen- und Außenkameras mit Live-Bild aufs Smartphone, fachgerecht eingerichtet. Mit Akku oder Steckernetzteil, ohne Kabelverlegung. Datenschutz inklusive.',
+      'Innen- und Außenkameras mit Live-Bild aufs Smartphone, fachgerecht montiert und eingerichtet. Mit Akku oder Steckernetzteil, ohne feste Elektroinstallation.',
     claim: 'Nachsehen, wer geklingelt hat – von überall.',
     einleitung:
-      'Eine Kamera hilft in zwei Momenten: wenn Sie wissen wollen, wer vor der Tür steht, und wenn hinterher niemand erklären kann, wie der Kratzer ans Auto gekommen ist. Beides lässt sich ohne Kabelverlegung lösen.',
+      'Eine Kamera hilft in zwei Momenten: wenn Sie wissen wollen, wer vor der Tür steht, und wenn hinterher niemand erklären kann, wie der Kratzer ans Auto gekommen ist. Beides lässt sich ohne neue Elektroinstallation lösen.',
     nutzen: [
       {
         titel: 'Live-Bild aufs Handy',
@@ -303,8 +303,8 @@ export const leistungen = [
         text: 'Die Kamera meldet Bewegung in einem Bereich, den Sie festlegen. Die Straße davor können Sie ausblenden, damit nicht jedes vorbeifahrende Auto eine Benachrichtigung auslöst.',
       },
       {
-        titel: 'Außen ohne Elektriker',
-        text: 'Wir setzen auf Kameras mit Akku oder Steckernetzteil. Es muss keine Leitung nach draußen gelegt und keine Wand durchbohrt werden.',
+        titel: 'Ohne neue Elektroinstallation',
+        text: 'Wir setzen auf Kameras mit Akku oder Steckernetzteil, deshalb muss keine feste Leitung nach draußen gelegt werden. Die Kamera wird an der Fassade gedübelt. Muss für das Netzteil ein Kabel nach innen, setzen wir eine saubere Durchführung und verschließen sie fachgerecht. Ob das bei Ihnen nötig ist, sehen wir beim Termin vor Ort.',
       },
       {
         titel: 'Rechtlich sauber ausgerichtet',

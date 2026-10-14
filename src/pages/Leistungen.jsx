@@ -9,7 +9,7 @@ export default function Leistungen() {
           Unsere Leistungen
         </h1>
         <p className="text-white/80 text-lg max-w-2xl mx-auto">
-          Smart Home nachrüsten, ohne Umbau und ohne Dreck – einzeln oder als Komplettpaket zum Festpreis.
+          Smart Home nachrüsten, ohne neue Leitungen und ohne Umbau – einzeln oder als Komplettpaket zum Festpreis.
           Wir sind in {EINZUGSGEBIET} für Sie unterwegs.
         </p>
       </div>
