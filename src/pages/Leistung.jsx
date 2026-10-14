@@ -1,5 +1,5 @@
 import { Link, useParams } from 'react-router-dom'
-import { leistungen, leistungZuSlug } from '../data/leistungen'
+import { leistungen, leistungZuSlug, EINZUGSGEBIET } from '../data/leistungen'
 
 const ablauf = [
   { nr: '1', titel: 'Kostenloser Termin vor Ort', text: 'Wir sehen uns Ihre Räume an, hören zu und sagen Ihnen offen, was sinnvoll ist und was nicht.' },
@@ -80,9 +80,10 @@ export default function Leistung() {
             ))}
           </ul>
           <p className="text-gray-500 text-sm mt-8 leading-relaxed">
-            Wir installieren ausschließlich <strong>Homematic IP</strong> – ein in Deutschland entwickeltes und produziertes System,
-            das vom VDE hinsichtlich Funkprotokoll, Informationssicherheit und Datenschutz geprüft ist. Für die Nutzung ist kein
-            Abonnement nötig.
+            Wir arbeiten mit einem in Deutschland entwickelten und produzierten Funksystem, das vom VDE hinsichtlich
+            Funkprotokoll, Informationssicherheit und Datenschutz geprüft und zertifiziert ist. Alle Komponenten stammen
+            aus einer Hand und sind aufeinander abgestimmt. Für die Nutzung ist kein Abonnement nötig, und es werden
+            keine Daten an Dritte verkauft.
           </p>
         </div>
       </section>
@@ -136,14 +137,15 @@ export default function Leistung() {
           <p className="text-white/60 text-sm mt-6">
             Oder direkt anrufen: <a href="tel:+4915563989382" className="text-white underline">+49 15563 989382</a>
           </p>
+          <p className="text-white/60 text-sm mt-2">Wir sind in {EINZUGSGEBIET} für Sie unterwegs.</p>
         </div>
       </section>
 
       {/* Weitere Leistungen */}
       <section className="py-16 px-[5%]">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-5xl mx-auto text-center">
           <h2 className="font-playfair font-bold text-gray-900 text-xl mb-6">Weitere Leistungen</h2>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap justify-center gap-3">
             {andere.map((a) => (
               <Link
                 key={a.slug}

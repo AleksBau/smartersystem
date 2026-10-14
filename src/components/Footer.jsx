@@ -30,10 +30,13 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-white/10 pt-5 text-center text-xs text-white/40 max-w-6xl mx-auto">
-        © Smarter System 2024 – Alle Rechte vorbehalten ·{' '}
-        <Link to="/datenschutz" className="text-white/45 underline">Datenschutz</Link> ·{' '}
-        <Link to="/impressum" className="text-white/45 underline">Impressum</Link>
+      <div className="border-t border-white/10 pt-5 text-center max-w-6xl mx-auto">
+        <p className="text-xs text-white/50 mb-2">Einzugsgebiet: Berlin und Brandenburg</p>
+        <p className="text-xs text-white/40">
+          © Smarter System 2026 – Alle Rechte vorbehalten ·{' '}
+          <Link to="/datenschutz" className="text-white/45 underline">Datenschutz</Link> ·{' '}
+          <Link to="/impressum" className="text-white/45 underline">Impressum</Link>
+        </p>
       </div>
     </footer>
   )

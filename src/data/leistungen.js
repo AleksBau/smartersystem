@@ -1,62 +1,78 @@
 /**
  * Inhalte der Leistungsseiten.
  *
- * Jede Seite zielt auf eine konkrete Suchanfrage. Wer "Heizung smart
- * nachruesten Berlin" sucht, soll auf einer Seite landen, die genau das
- * im Titel traegt - nicht auf der Startseite.
+ * Aufbau nach dem Muster, das sich für lokale Betriebe bewährt hat:
+ *   titel  -> was Google in der Trefferliste anzeigt. Hier steht das
+ *             Einzugsgebiet drin, weil danach gesucht wird.
+ *   h1     -> was der Besucher auf der Seite liest. Hier steht KEIN Ort,
+ *             sondern der Nutzen. Ein Ortsname in der Überschrift wirkt
+ *             wie eine Suchmaschinenseite, nicht wie ein Fachbetrieb.
  *
- * WICHTIG, rechtlich: Hier wird ausschliesslich beschrieben, was ohne
- * Eintragung in die Handwerksrolle erbracht werden darf - batteriebetriebene
- * und steckerfertige Komponenten. Kein Austausch von Wandschaltern, keine
- * Arbeiten an der festen Installation, keine Zutrittstechnik.
+ * Herstellernamen werden bewusst nicht genannt.
  */
+
+export const EINZUGSGEBIET = 'Berlin und Brandenburg'
 
 export const leistungen = [
   {
     slug: 'heizungssteuerung',
     icon: '🌡️',
     kurz: 'Heizung',
-    h1: 'Heizung smart nachrüsten in Berlin',
-    titel: 'Heizung smart nachrüsten Berlin | Smarter System',
+    h1: 'Heizungssteuerung, die mitdenkt',
+    titel: 'Heizung smart nachrüsten | Berlin & Brandenburg',
     beschreibung:
-      'Smarte Heizungssteuerung für Ihre Wohnung in Berlin: Funkthermostate auf vorhandene Ventile, ohne Umbau an der Heizung. Festpreis inklusive Montage und Einweisung.',
-    claim: 'Jeder Raum wird warm, wenn Sie ihn brauchen – und sonst nicht.',
+      'Smarte Heizungssteuerung für Wohnung, Büro und Einrichtung. Funkthermostate auf vorhandene Ventile, ohne Eingriff in die Anlage. Festpreis inklusive Montage.',
+    claim: 'Jeder Raum wird warm, wenn er gebraucht wird – und sonst nicht.',
     einleitung:
-      'Die meisten Heizkörper laufen nach Gefühl. Morgens zu kalt, tagsüber unnötig warm, nachts vergessen zurückzudrehen. Eine smarte Steuerung übernimmt das – und zwar raumweise, nicht pauschal für die ganze Wohnung.',
+      'Die meisten Heizkörper laufen nach Gefühl. Morgens zu kalt, tagsüber unnötig warm, am Wochenende heizt ein leeres Büro durch. Eine smarte Steuerung übernimmt das raumweise – und rechnet sich dort am schnellsten, wo viele Räume nach Plan genutzt werden.',
     nutzen: [
       {
-        titel: 'Heizkosten sinken spürbar',
-        text: 'Wer die Temperatur in einem Raum um ein Grad senkt, spart dort rund sechs Prozent Heizenergie. Eine Zeitsteuerung, die nachts und bei Abwesenheit automatisch absenkt, holt genau das heraus – ohne dass Sie frieren.',
+        titel: 'Für Büros und Einrichtungen am wirksamsten',
+        text: 'Besprechungsräume, Praxen, Vereinsheime, Kitas und Verwaltungsräume stehen die meiste Zeit leer und heizen trotzdem. Jeder Raum bekommt ein Zeitprofil nach Belegung, das Wochenende und die Ferien laufen automatisch im Absenkbetrieb. Das ist die Stellschraube mit dem größten Hebel – und als Betriebsausgabe absetzbar.',
       },
       {
-        titel: 'Nach Ihrem Tagesablauf, nicht nach Schema F',
-        text: 'Bad warm ab halb sieben, Wohnzimmer ab Feierabend, Schlafzimmer kühl. Wir richten die Zeitprofile gemeinsam mit Ihnen ein, so wie Sie tatsächlich leben.',
+        titel: 'Heizkosten sinken spürbar',
+        text: 'Ein Grad weniger Raumtemperatur spart rund sechs Prozent Heizenergie. Eine Steuerung, die nachts, am Wochenende und bei Abwesenheit automatisch absenkt, holt genau das heraus, ohne dass jemand friert.',
+      },
+      {
+        titel: 'Niemand muss mehr daran denken',
+        text: 'Kein Hausmeister, der abends durch alle Räume geht. Kein Mitarbeiter, der den Heizkörper im Lager vergisst. Die Steuerung macht es verlässlich, jeden Tag gleich.',
       },
       {
         titel: 'Fenster auf, Heizung aus',
-        text: 'Ein Fensterkontakt meldet das geöffnete Fenster, der Thermostat regelt sofort herunter und nach dem Schließen wieder hoch. Das passiert von allein, auch wenn niemand daran denkt.',
+        text: 'Ein Fensterkontakt meldet das geöffnete Fenster, der Thermostat regelt sofort herunter und nach dem Schließen wieder hoch. Gerade in Räumen, die regelmäßig gelüftet werden, summiert sich das.',
       },
       {
         titel: 'Kein Eingriff in die Heizungsanlage',
-        text: 'Wir tauschen nur den Thermostatkopf auf dem vorhandenen Ventil. Kein Wasser ablassen, kein Handwerker an der Anlage, keine Spuren. In einer Mietwohnung ist das ohne Weiteres rückbaubar.',
+        text: 'Wir tauschen nur den Thermostatkopf auf dem vorhandenen Ventil. Kein Wasser ablassen, kein Handwerker an der Anlage, keine Spuren. In Miet- und Gewerberäumen ist das jederzeit rückbaubar.',
+      },
+      {
+        titel: 'Auswertung statt Bauchgefühl',
+        text: 'Sie sehen je Raum, wie lange geheizt wurde und wie die Temperatur verlaufen ist. Bei mehreren Standorten erkennen Sie auf einen Blick, wo etwas aus dem Ruder läuft.',
       },
     ],
     komponenten: [
       'Funk-Thermostatkopf je Heizkörper, batteriebetrieben, auf das vorhandene Ventil geschraubt',
-      'Wandthermostat für Räume, in denen die Temperatur dort gemessen werden soll, wo Sie sitzen',
+      'Wandthermostat für Räume, in denen dort gemessen werden soll, wo Menschen sitzen',
       'Fenster- und Türkontakte in Klebemontage, ohne Bohren',
-      'Zentrale für die Steuerung per App, auch von unterwegs',
+      'Zentrale für Zeitprofile, Auswertung und Zugriff von unterwegs',
+      'Auf Wunsch Bediensperre, damit Einstellungen in öffentlich zugänglichen Räumen nicht verstellt werden',
     ],
     faq: [
+      {
+        frage: 'Lohnt sich das auch für ein Büro oder eine Einrichtung?',
+        antwort:
+          'Dort meist schneller als in einer Wohnung. Je mehr Räume nach festem Plan genutzt werden und je länger sie leer stehen, desto größer der Effekt. Beim Termin vor Ort rechnen wir das für Ihre Räume konkret durch, bevor Sie etwas beauftragen.',
+      },
       {
         frage: 'Funktioniert das auch in einer Mietwohnung?',
         antwort:
           'Ja. Der alte Thermostatkopf wird abgeschraubt und der neue aufgesetzt. Das ist keine bauliche Veränderung und beim Auszug in zehn Minuten rückgängig gemacht. Den alten Kopf bekommen Sie beschriftet zurück.',
       },
       {
-        frage: 'Passen die Thermostate auf meine Heizkörper?',
+        frage: 'Passen die Thermostate auf unsere Heizkörper?',
         antwort:
-          'In aller Regel ja. Die gängigen Ventilanschlüsse sind genormt, für die übrigen gibt es Adapter. Beim kostenlosen Termin vor Ort sehen wir uns Ihre Ventile an, bevor Sie etwas bestellen.',
+          'In aller Regel ja. Die gängigen Ventilanschlüsse sind genormt, für die übrigen gibt es Adapter. Beim kostenlosen Termin vor Ort sehen wir uns die Ventile an, bevor etwas bestellt wird.',
       },
       {
         frage: 'Was passiert bei einem Stromausfall?',
@@ -64,9 +80,9 @@ export const leistungen = [
           'Die Thermostate laufen mit Batterien und regeln weiter. Nur die Steuerung per App ruht, bis Strom und Internet zurück sind. Die Batterien halten etwa zwei Jahre, das Gerät meldet sich rechtzeitig.',
       },
       {
-        frage: 'Brauche ich dafür einen Heizungsbauer?',
+        frage: 'Brauchen wir dafür einen Heizungsbauer?',
         antwort:
-          'Nein. An der Heizungsanlage selbst wird nicht gearbeitet. Sollte bei Ihnen ein hydraulischer Abgleich oder ein Ventiltausch sinnvoll sein, sagen wir Ihnen das offen und vermitteln einen Fachbetrieb.',
+          'Nein. An der Heizungsanlage selbst wird nicht gearbeitet. Sollte bei Ihnen ein hydraulischer Abgleich oder ein Ventiltausch sinnvoll sein, sagen wir das offen und vermitteln einen Fachbetrieb.',
       },
     ],
   },
@@ -74,18 +90,18 @@ export const leistungen = [
   {
     slug: 'alarmanlage',
     icon: '🔔',
-    kurz: 'Sicherheit',
-    h1: 'Funk-Alarmanlage nachrüsten in Berlin',
-    titel: 'Alarmanlage nachrüsten Berlin | Smarter System',
+    kurz: 'Alarm',
+    h1: 'Funk-Alarmanlage nachrüsten – ohne Kabel, ohne Dreck',
+    titel: 'Alarmanlage nachrüsten | Berlin & Brandenburg',
     beschreibung:
-      'Funk-Alarmanlage für Wohnung und Haus in Berlin, ohne Kabel und ohne Stemmen. Fenster- und Türüberwachung, Sirene, Nachricht aufs Handy. Festpreis inklusive Montage.',
+      'Funk-Alarmanlage für Wohnung, Haus und Gewerbe. Fenster- und Türüberwachung, Sirene, Nachricht aufs Handy. Nachgerüstet an einem Tag, zum Festpreis.',
     claim: 'Sie erfahren sofort, wenn etwas nicht stimmt – egal, wo Sie gerade sind.',
     einleitung:
-      'Die meisten Einbrüche in Berlin passieren über Fenster und Terrassentüren im Erdgeschoss, und die meisten werden abgebrochen, sobald es laut wird und auffällt. Genau dort setzt eine Funk-Alarmanlage an.',
+      'Die meisten Einbrüche passieren über Fenster und Terrassentüren im Erdgeschoss, und die meisten werden abgebrochen, sobald es laut wird und auffällt. Genau dort setzt eine Funk-Alarmanlage an.',
     nutzen: [
       {
         titel: 'Laut und sichtbar statt heimlich',
-        text: 'Im Alarmfall geht die Sirene an und das Licht im Haus schaltet ein. Einbrecher suchen keine Auseinandersetzung, sie suchen eine ruhige Gelegenheit. Beides nehmen Sie ihnen.',
+        text: 'Im Alarmfall geht die Sirene an und das Licht schaltet ein. Einbrecher suchen keine Auseinandersetzung, sie suchen eine ruhige Gelegenheit. Beides nehmen Sie ihnen.',
       },
       {
         titel: 'Nachricht aufs Handy, in Sekunden',
@@ -93,11 +109,11 @@ export const leistungen = [
       },
       {
         titel: 'Ohne Kabel, ohne Dreck',
-        text: 'Alle Komponenten funken und laufen mit Batterie oder Stecker. Es wird nichts gestemmt, nichts verlegt, nichts verputzt. Die Montage einer Wohnung dauert in der Regel einen Arbeitstag.',
+        text: 'Alle Komponenten funken und laufen mit Batterie oder Stecker. Es wird nichts gestemmt, nichts verlegt, nichts verputzt. Eine Wohnung ist in der Regel an einem Arbeitstag fertig.',
       },
       {
         titel: 'Auch wenn niemand da ist',
-        text: 'Eine Anwesenheitssimulation schaltet abends Licht in wechselnden Räumen. Von außen sieht die Wohnung bewohnt aus, auch wenn Sie zwei Wochen weg sind.',
+        text: 'Eine Anwesenheitssimulation schaltet abends Licht in wechselnden Räumen. Von außen sieht das Objekt bewohnt aus, auch wenn Sie zwei Wochen weg sind.',
       },
     ],
     komponenten: [
@@ -132,55 +148,120 @@ export const leistungen = [
   },
 
   {
-    slug: 'lichtsteuerung',
+    slug: 'licht-und-beschattung',
     icon: '💡',
-    kurz: 'Licht',
-    h1: 'Lichtsteuerung nachrüsten in Berlin',
-    titel: 'Smarte Lichtsteuerung Berlin nachrüsten | Smarter System',
+    kurz: 'Licht & Beschattung',
+    h1: 'Licht und Beschattung, die sich selbst regeln',
+    titel: 'Licht & Rollladensteuerung nachrüsten | Berlin & Brandenburg',
     beschreibung:
-      'Licht per App, Taster oder automatisch – nachgerüstet ohne Kabel und ohne Eingriff in die Elektroinstallation. Für Wohnung, Haus und Büro in Berlin, zum Festpreis.',
-    claim: 'Ein Schalter an der Wand, wo bisher keiner war – ohne ein einziges Kabel.',
+      'Licht, Rollläden und Jalousien automatisch steuern – per App, Funktaster oder nach Sonnenstand. Nachgerüstet ohne neue Leitungen, für Wohnung, Haus und Büro.',
+    claim: 'Morgens fahren die Rollläden hoch, abends geht das Licht an. Ohne dass jemand daran denkt.',
     einleitung:
-      'Es gibt in fast jeder Wohnung die eine Stelle, an der ein Lichtschalter fehlt. Am Bett, am Sofa, am Ende des Flurs. Mit Funktastern lässt sich das nachrüsten, ohne eine Wand zu öffnen.',
+      'Es gibt in fast jeder Wohnung die eine Stelle, an der ein Lichtschalter fehlt. Und es gibt den Sommertag, an dem niemand da war, um die Jalousie herunterzulassen, und abends steht die Hitze im Raum. Beides lässt sich nachrüsten.',
     nutzen: [
+      {
+        titel: 'Beschattung nach Sonne, nicht nach Zufall',
+        text: 'Rollläden und Jalousien fahren morgens hoch, abends herunter und bei starker Sonne automatisch in Schattenstellung. Im Sommer bleibt es innen kühler, im Winter geht abends weniger Wärme verloren.',
+      },
       {
         titel: 'Schalter an jeder Wand, ohne Kabel',
         text: 'Der Funktaster wird geklebt oder geschraubt und kann überall hin – auch auf Glas oder Fliesen. Er sieht aus wie ein normaler Schalter und braucht keine Leitung.',
       },
       {
         titel: 'Licht geht an, wenn Sie den Raum betreten',
-        text: 'Ein Bewegungsmelder im Flur oder Keller schaltet beim Betreten ein und nach einer eingestellten Zeit wieder aus. Besonders praktisch mit vollen Händen.',
+        text: 'Ein Bewegungsmelder im Flur, Keller oder Treppenhaus schaltet beim Betreten ein und nach einer eingestellten Zeit wieder aus. Besonders praktisch mit vollen Händen.',
       },
       {
         titel: 'Alles aus mit einem Druck',
-        text: 'Ein Taster an der Wohnungstür schaltet beim Verlassen alle eingebundenen Lampen und Geräte ab. Kein Rundgang mehr durch die Wohnung.',
-      },
-      {
-        titel: 'Ohne Eingriff in die Elektrik',
-        text: 'Wir arbeiten mit Zwischensteckern, schaltbaren Leuchtmitteln und Funktastern. An der festen Installation wird nichts verändert – auch in einer Mietwohnung unproblematisch.',
+        text: 'Ein Taster an der Wohnungs- oder Bürotür schaltet beim Verlassen alle eingebundenen Lampen und Geräte ab. Kein Rundgang mehr durch die Räume.',
       },
     ],
     komponenten: [
       'Funktaster, einzeln oder als Doppeltaster, frei an der Wand platzierbar',
       'Zwischenstecker mit Schalt- und Messfunktion für Steh- und Tischleuchten',
+      'Rollladen- und Jalousieaktoren anstelle des vorhandenen Schalters',
       'Bewegungs- und Präsenzmelder für Flur, Keller und Treppenhaus',
-      'Fernbedienung für Lichtstimmungen',
+      'Helligkeits- und Wettersensorik für die automatische Beschattung',
     ],
     faq: [
       {
         frage: 'Funktioniert das mit meinen vorhandenen Lampen?',
         antwort:
-          'Steh-, Tisch- und Stehleuchten mit Stecker schalten wir über Zwischenstecker. Bei fest angeschlossenen Deckenleuchten arbeiten wir über schaltbare Leuchtmittel. Was in Ihrem Fall sinnvoll ist, sehen wir beim Termin vor Ort.',
+          'Steh-, Tisch- und Bodenleuchten mit Stecker schalten wir über Zwischenstecker. Bei fest angeschlossenen Deckenleuchten arbeiten wir über schaltbare Leuchtmittel oder über einen Schaltaktor anstelle des vorhandenen Schalters. Was in Ihrem Fall sinnvoll ist, sehen wir beim Termin vor Ort.',
       },
       {
-        frage: 'Tauschen Sie auch Lichtschalter in der Wand?',
+        frage: 'Lassen sich auch vorhandene Rollläden nachrüsten?',
         antwort:
-          'Arbeiten an der festen Elektroinstallation führen wir nicht selbst aus. Wenn das in Ihrem Fall die bessere Lösung ist, sagen wir es Ihnen und arbeiten mit einem eingetragenen Elektrofachbetrieb zusammen.',
+          'Wenn Ihre Rollläden bereits elektrisch über einen Wandschalter fahren, ja. Der Schalter wird gegen einen Aktor getauscht, der Rollladenmotor bleibt unverändert. Bei Gurtwicklern von Hand ist der Aufwand größer – das sagen wir Ihnen vor Ort offen.',
       },
       {
         frage: 'Funktioniert der vorhandene Schalter weiter?',
         antwort:
-          'Ja. Alles bleibt wie gewohnt bedienbar, die Funklösung kommt zusätzlich dazu. Niemand in Ihrem Haushalt muss umlernen.',
+          'Ja. Alles bleibt wie gewohnt bedienbar, die automatische Steuerung kommt zusätzlich dazu. Niemand in Ihrem Haushalt oder Betrieb muss umlernen.',
+      },
+      {
+        frage: 'Verdunkelt die Automatik auch, wenn ich im Raum bin?',
+        antwort:
+          'Nein. Sie legen fest, wann automatisch gefahren wird und wann nicht. Ein Druck auf den Taster hat immer Vorrang vor der Automatik.',
+      },
+    ],
+  },
+
+  {
+    slug: 'schalter-tauschen',
+    icon: '🔌',
+    kurz: 'Schalter',
+    h1: 'Vorhandene Schalter gegen smarte Schalter tauschen',
+    titel: 'Lichtschalter smart machen | Berlin & Brandenburg',
+    beschreibung:
+      'Vorhandene Wandschalter eins zu eins gegen smarte Schaltaktoren tauschen – ohne neue Leitungen und ohne Umbau. Für Licht, Rollläden und fest angeschlossene Geräte.',
+    claim: 'Der Schalter bleibt, wo er ist. Nur kann er jetzt mehr.',
+    einleitung:
+      'Funktaster und Zwischenstecker lösen vieles, aber nicht alles. Eine fest angeschlossene Deckenleuchte oder ein Rollladen lässt sich nur dort sauber steuern, wo schon ein Schalter sitzt. Dann wird der vorhandene Schalter gegen einen funkfähigen getauscht – an derselben Stelle, in derselben Dose.',
+    nutzen: [
+      {
+        titel: 'Eins zu eins, ohne Umbau',
+        text: 'Der vorhandene Schalter wird gegen einen funktionsgleichen Schaltaktor ersetzt. Es werden keine neuen Leitungen verlegt, keine Wände geöffnet und nichts an der Verteilung verändert.',
+      },
+      {
+        titel: 'Deckenleuchten und Rollläden werden steuerbar',
+        text: 'Genau die Verbraucher, die fest angeschlossen sind und sich sonst nicht einbinden lassen: Deckenlicht, Außenleuchten, Rollladen- und Jalousiemotoren.',
+      },
+      {
+        titel: 'Von Hand weiterhin bedienbar',
+        text: 'Der Schalter an der Wand funktioniert wie vorher. Wer nichts mit der App zu tun haben will, merkt keinen Unterschied – er drückt wie immer.',
+      },
+      {
+        titel: 'Gemessen und protokolliert',
+        text: 'Nach dem Tausch werden die vorgeschriebenen Messungen nach DIN VDE 0100-600 durchgeführt und schriftlich festgehalten. Das Protokoll bekommen Sie zu Ihren Unterlagen.',
+      },
+    ],
+    komponenten: [
+      'Schaltaktor anstelle des vorhandenen Licht- oder Rollladenschalters',
+      'Passender Rahmen im Design Ihrer übrigen Schalter',
+      'Dimmaktor, wo stufenloses Licht gewünscht ist',
+      'Messung und Prüfprotokoll nach DIN VDE 0100-600',
+    ],
+    faq: [
+      {
+        frage: 'Wird dabei an der Elektroinstallation gearbeitet?',
+        antwort:
+          'Nur innerhalb der vorhandenen Schalterdose und am bestehenden Stromkreis. Es werden keine Leitungen neu verlegt, keine Stromkreise geschaffen und keine Arbeiten an Verteilung oder Zähleranlage vorgenommen. Wo mehr nötig ist, arbeiten wir mit einem eingetragenen Elektrofachbetrieb zusammen und sagen Ihnen das vorher.',
+      },
+      {
+        frage: 'Geht das auch in einer Mietwohnung?',
+        antwort:
+          'Grundsätzlich ja, der ursprüngliche Zustand lässt sich wiederherstellen. Da es sich um einen Eingriff in die Installation handelt, sollten Sie Ihren Vermieter vorher einbeziehen. Wir sagen Ihnen, was Sie dafür fragen müssen.',
+      },
+      {
+        frage: 'Was, wenn in der Dose kein Neutralleiter liegt?',
+        antwort:
+          'Das kommt in Altbauten vor. Dann gibt es Aktoren, die ohne Neutralleiter auskommen, oder wir lösen die Stelle anders. Beim Termin vor Ort sehen wir in eine Dose hinein, bevor Sie etwas beauftragen.',
+      },
+      {
+        frage: 'Bleibt das Aussehen erhalten?',
+        antwort:
+          'Wir verwenden Rahmen, die zu Ihren vorhandenen Schaltern passen. In der Regel fällt der getauschte Schalter im Raum nicht auf.',
       },
     ],
   },
@@ -189,29 +270,33 @@ export const leistungen = [
     slug: 'rauchwarnmelder',
     icon: '🚨',
     kurz: 'Rauchmelder',
-    h1: 'Vernetzte Rauchwarnmelder in Berlin',
-    titel: 'Rauchwarnmelder montieren Berlin | Smarter System',
+    h1: 'Vernetzte Rauchwarnmelder – alle schlagen an, nicht nur einer',
+    titel: 'Rauchwarnmelder montieren lassen | Berlin & Brandenburg',
     beschreibung:
-      'Vernetzte Funk-Rauchwarnmelder für Wohnung und Haus in Berlin. Alle Melder schlagen gemeinsam an, Meldung aufs Handy. Montage nach DIN 14676 mit Protokoll.',
+      'Vernetzte Funk-Rauchwarnmelder für Wohnung, Haus und Gewerbe. Montage nach DIN 14676 mit Protokoll, Meldung aufs Handy, jährliche Prüfung auf Wunsch.',
     claim: 'Wenn es in der Küche brennt, hören Sie es auch im Schlafzimmer.',
     einleitung:
       'Rauchwarnmelder sind in Berlin seit 2021 in allen Wohnungen Pflicht. Einzelne Melder haben aber eine Schwäche: Sie hören den Melder im Keller nicht, wenn Sie oben schlafen. Vernetzte Melder lösen gemeinsam aus.',
     nutzen: [
       {
         titel: 'Alle Melder schlagen gleichzeitig an',
-        text: 'Erkennt ein Melder Rauch, geben alle anderen Alarm. In einem Haus über zwei Etagen oder einer großen Wohnung kann das den entscheidenden Unterschied machen.',
+        text: 'Erkennt ein Melder Rauch, geben alle anderen Alarm. In einem Haus über zwei Etagen, einer großen Wohnung oder einem Bürotrakt kann das den entscheidenden Unterschied machen.',
       },
       {
         titel: 'Meldung aufs Handy, auch von unterwegs',
-        text: 'Sie erfahren es auch, wenn Sie nicht zu Hause sind – und können jemanden anrufen, der nachsieht, bevor aus einem vergessenen Topf ein Wohnungsbrand wird.',
+        text: 'Sie erfahren es auch, wenn Sie nicht da sind – und können jemanden anrufen, der nachsieht, bevor aus einem vergessenen Topf ein Wohnungsbrand wird.',
       },
       {
         titel: 'Fachgerechte Montage mit Protokoll',
-        text: 'Wir montieren nach der Anwendungsnorm DIN 14676 und übergeben ein schriftliches Protokoll mit Montageorten und Gerätenummern. Das ist Ihr Nachweis gegenüber Vermieter und Versicherung.',
+        text: 'Wir montieren nach der Anwendungsnorm DIN 14676 und übergeben ein schriftliches Protokoll mit Montageorten und Gerätenummern. Das ist Ihr Nachweis gegenüber Eigentümer, Verwaltung und Versicherung.',
       },
       {
         titel: 'Ruhe statt nächtlichem Piepen',
         text: 'Die Geräte melden eine schwache Batterie rechtzeitig in der App, nicht um drei Uhr nachts mit einem Piepton. Die fest verbaute Batterie hält zehn Jahre.',
+      },
+      {
+        titel: 'Für Verwaltungen und Eigentümergemeinschaften',
+        text: 'Ganze Häuser statten wir in einem Durchgang aus, mit Geräteliste je Wohnung und einem Protokoll für die Akte. Die jährliche Prüfung übernehmen wir auf Wunsch gleich mit.',
       },
     ],
     komponenten: [
@@ -219,12 +304,13 @@ export const leistungen = [
       'Montage in Schlafräumen, Kinderzimmern und Fluren nach DIN 14676',
       'Einbindung in die Zentrale für Meldungen aufs Smartphone',
       'Schriftliches Montageprotokoll für Ihre Unterlagen',
+      'Fachgerechte Entsorgung der alten Geräte',
     ],
     faq: [
       {
         frage: 'Sind Rauchwarnmelder in Berlin Pflicht?',
         antwort:
-          'Ja. Nach der Berliner Bauordnung müssen Schlafräume, Kinderzimmer und Flure, über die Rettungswege führen, mit Rauchwarnmeldern ausgestattet sein. Die Pflicht gilt seit dem 1. Januar 2021 auch für bestehende Wohnungen.',
+          'Ja. Nach der Berliner Bauordnung müssen Schlafräume, Kinderzimmer und Flure, über die Rettungswege führen, mit Rauchwarnmeldern ausgestattet sein. Die Pflicht gilt seit dem 1. Januar 2021 auch für bestehende Wohnungen. In Brandenburg gilt eine entsprechende Regelung.',
       },
       {
         frage: 'Wer ist für die Wartung verantwortlich?',
@@ -236,6 +322,11 @@ export const leistungen = [
         antwort:
           'Ja. Rauchwarnmelder müssen nach zehn Jahren ausgetauscht werden. Wir nehmen die alten Geräte mit und entsorgen sie fachgerecht.',
       },
+      {
+        frage: 'Statten Sie auch ganze Häuser aus?',
+        antwort:
+          'Ja. Für Eigentümergemeinschaften und Verwaltungen rüsten wir alle Wohnungen in einem Durchgang aus und übergeben eine Dokumentation je Einheit. Sprechen Sie uns auf die Terminabstimmung mit den Mietern an.',
+      },
     ],
   },
 
@@ -243,10 +334,10 @@ export const leistungen = [
     slug: 'videoueberwachung',
     icon: '📹',
     kurz: 'Kameras',
-    h1: 'Überwachungskamera installieren in Berlin',
-    titel: 'Überwachungskamera installieren Berlin | Smarter System',
+    h1: 'Innen- und Außenkameras mit Blick aufs Handy',
+    titel: 'Überwachungskamera installieren | Berlin & Brandenburg',
     beschreibung:
-      'Innen- und Außenkameras mit Live-Bild aufs Smartphone, in Berlin fachgerecht eingerichtet. Mit Akku oder Steckernetzteil, ohne Kabelverlegung. Datenschutz inklusive.',
+      'Innen- und Außenkameras mit Live-Bild aufs Smartphone, fachgerecht eingerichtet. Mit Akku oder Steckernetzteil, ohne Kabelverlegung. Datenschutz inklusive.',
     claim: 'Nachsehen, wer geklingelt hat – von überall.',
     einleitung:
       'Eine Kamera hilft in zwei Momenten: wenn Sie wissen wollen, wer vor der Tür steht, und wenn hinterher niemand erklären kann, wie der Kratzer ans Auto gekommen ist. Beides lässt sich ohne Kabelverlegung lösen.',
@@ -283,7 +374,7 @@ export const leistungen = [
       {
         frage: 'Wo landen die Aufnahmen?',
         antwort:
-          'Bei Homematic IP bleiben die Aufnahmen in Ihrem Netzwerk beziehungsweise in Ihrem eigenen Konto. Wir richten die Speicherdauer so ein, wie Sie es möchten.',
+          'Bei den von uns eingesetzten Kameras bleiben die Aufnahmen in Ihrem Netzwerk beziehungsweise in Ihrem eigenen Konto. Wir richten die Speicherdauer so ein, wie Sie es möchten.',
       },
       {
         frage: 'Wie lange hält der Akku einer Außenkamera?',
@@ -297,13 +388,13 @@ export const leistungen = [
     slug: 'wartung',
     icon: '🛠️',
     kurz: 'Wartung',
-    h1: 'Wartung und Support für Ihr Smart Home',
-    titel: 'Smart Home Wartung & Support Berlin | Smarter System',
+    h1: 'Wartung und Support – ein Ansprechpartner, der Ihre Anlage kennt',
+    titel: 'Smart-Home-Wartung & Support | Berlin & Brandenburg',
     beschreibung:
-      'Batteriewechsel, Updates, neue Automatisierungen und ein Ansprechpartner, der zurückruft. Wartung für Homematic IP in Berlin – auch für Anlagen, die wir nicht gebaut haben.',
-    claim: 'Ein Ansprechpartner, der sich an Ihre Anlage erinnert.',
+      'Batteriewechsel, Aktualisierungen, neue Automatisierungen und jemand, der zurückruft. Auch für Anlagen, die wir nicht selbst gebaut haben.',
+    claim: 'Damit aus Ihrer Technik nach zwei Jahren kein Kabelsalat wird.',
     einleitung:
-      'Ein Smart Home ist kein Möbelstück, es lebt. Batterien gehen leer, Updates kommen, der Tagesablauf ändert sich. Ohne jemanden, der sich kümmert, wird daraus nach zwei Jahren eine Sammlung Geräte, die niemand mehr anfasst.',
+      'Ein Smart Home ist kein Möbelstück, es lebt. Batterien gehen leer, Aktualisierungen kommen, der Tagesablauf ändert sich. Ohne jemanden, der sich kümmert, wird daraus nach zwei Jahren eine Sammlung Geräte, die niemand mehr anfasst.',
     nutzen: [
       {
         titel: 'Jährliche Durchsicht vor Ort',
@@ -311,7 +402,7 @@ export const leistungen = [
       },
       {
         titel: 'Neue Automatisierungen, wenn sich etwas ändert',
-        text: 'Kind zieht aus, Homeoffice-Tage verschieben sich, neue Leuchte im Wohnzimmer. Wir passen die Abläufe an, statt dass Sie sich in Menüs einarbeiten.',
+        text: 'Kind zieht aus, Homeoffice-Tage verschieben sich, neue Leuchte im Wohnzimmer, zusätzlicher Besprechungsraum. Wir passen die Abläufe an, statt dass Sie sich in Menüs einarbeiten.',
       },
       {
         titel: 'Hilfe per Telefon und WhatsApp',
@@ -319,7 +410,7 @@ export const leistungen = [
       },
       {
         titel: 'Auch für fremde Anlagen',
-        text: 'Haben Sie Homematic IP selbst aufgebaut oder von jemand anderem einbauen lassen, übernehmen wir die Betreuung trotzdem. Wir sehen uns den Bestand an und sagen Ihnen offen, was sinnvoll ist.',
+        text: 'Haben Sie Ihr System selbst aufgebaut oder von jemand anderem einbauen lassen, übernehmen wir die Betreuung trotzdem. Wir sehen uns den Bestand an und sagen Ihnen offen, was sinnvoll ist.',
       },
     ],
     komponenten: [

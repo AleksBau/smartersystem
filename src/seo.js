@@ -27,16 +27,16 @@ export const SITE = {
 const feste = [
   {
     pfad: '/',
-    titel: 'Smart Home Berlin zum Festpreis | Smarter System',
+    titel: 'Smart Home nachrüsten | Berlin & Brandenburg',
     beschreibung:
-      'Smart Home für Wohnung, Haus und Büro in Berlin. Komplettpakete ab 1.249 € inklusive Montage, Einrichtung und Einweisung. Beratung vor Ort kostenlos.',
+      'Smart Home für Wohnung, Haus und Büro in Berlin und Brandenburg. Komplettpakete ab 1.249 € inklusive Montage, Einrichtung und Einweisung. Beratung kostenlos.',
     prioritaet: '1.0',
   },
   {
     pfad: '/leistungen',
-    titel: 'Leistungen | Smart Home nachrüsten in Berlin',
+    titel: 'Leistungen im Überblick | Berlin & Brandenburg',
     beschreibung:
-      'Heizungssteuerung, Alarmanlage, Lichtsteuerung, Rauchwarnmelder, Kameras und Wartung. Smart Home in Berlin nachrüsten – ohne Umbau, zum Festpreis.',
+      'Heizung, Licht und Beschattung, Alarm, Kameras, Rauchwarnmelder, Schaltertausch und Wartung. Smart Home nachrüsten ohne Umbau, zum Festpreis.',
     prioritaet: '0.9',
   },
   {

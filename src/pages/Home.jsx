@@ -2,13 +2,17 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import StarterSets from '../components/StarterSets'
 
+// Jede Karte führt auf die zugehörige Leistungsseite. Die Reihenfolge und die
+// Kurztexte sind auf die Startseite abgestimmt, die ausführlichen Inhalte
+// stehen in data/leistungen.js.
 const services = [
-  { icon: '💡', title: 'Beleuchtung', desc: 'Automatische Lichtsteuerung nach Tageszeit und Anwesenheit. Dimmen und Szenarien für jeden Anlass. Beschattung Ihrer Jalousie mit intelligenter Steuerung.' },
-  { icon: '🌡️', title: 'Heizungssteuerung', desc: 'Intelligente Raumtemperaturregelung spart bis zu 30 % Heizkosten. Automatische Anpassung an Ihre Gewohnheiten und Zeitpläne.' },
-  { icon: '🔒', title: 'Sicherheit', desc: 'Alarmanlage, Überwachungskameras und die zuverlässige Absicherung von Fenstern und Türen. Automatische Reaktionen bei Abwesenheit.' },
-  { icon: '📱', title: 'App-Steuerung', desc: 'Alles in einer App: Licht, Heizung, Sicherheit und mehr. Fernsteuerung von überall, Zeitschaltungen und individuelle Automatisierungen.' },
-  { icon: '🔧', title: 'Nachrüst-Installation', desc: 'Smart Home für jede Immobilie ob Haus, Wohnung, Seniorenheim oder Büro. Unsere Systeme lassen sich sauber und schnell nachrüsten ohne bauliche Eingriffe.' },
-  { icon: '✨', title: 'Komfort', desc: 'Szenarien wie „Guten Morgen" oder „Urlaub" steuern automatisch alle Geräte. Sprachsteuerung und Gestensteuerung für ultimativen Komfort.' },
+  { icon: '🌡️', title: 'Heizungssteuerung', zu: '/leistungen/heizungssteuerung', desc: 'Jeder Raum nach Zeitplan statt nach Gefühl. Spart spürbar Heizkosten – in Wohnungen, Büros und Einrichtungen.' },
+  { icon: '💡', title: 'Licht & Beschattung', zu: '/leistungen/licht-und-beschattung', desc: 'Licht nach Anwesenheit, Rollläden und Jalousien nach Sonnenstand. Schalter an jeder Wand, auch ohne Kabel.' },
+  { icon: '🔔', title: 'Alarm & Einbruchschutz', zu: '/leistungen/alarmanlage', desc: 'Fenster und Türen überwacht, Sirene und Licht im Alarmfall, Nachricht aufs Handy in Sekunden.' },
+  { icon: '📹', title: 'Kameras', zu: '/leistungen/videoueberwachung', desc: 'Innen und außen, mit Live-Bild aufs Smartphone. Mit Akku oder Stecker, ohne Kabel durch die Wand.' },
+  { icon: '🚨', title: 'Rauchwarnmelder', zu: '/leistungen/rauchwarnmelder', desc: 'Vernetzt, damit alle gemeinsam anschlagen. Montage nach DIN 14676 mit schriftlichem Protokoll.' },
+  { icon: '🔌', title: 'Schalter tauschen', zu: '/leistungen/schalter-tauschen', desc: 'Vorhandene Wandschalter eins zu eins gegen smarte Schalter – ohne neue Leitungen, ohne Umbau.' },
+  { icon: '🛠️', title: 'Wartung & Support', zu: '/leistungen/wartung', desc: 'Batterien, Aktualisierungen, neue Automatisierungen. Ein Ansprechpartner, der Ihre Anlage kennt.' },
 ]
 
 const steps = [
@@ -195,15 +199,24 @@ export default function Home() {
             <h2 className="section-title text-3xl md:text-4xl">Smart Home <span className="text-[#1A56E8]">Vorteile</span> im Überblick</h2>
             <p className="text-gray-500 text-lg mt-3">Von Beleuchtung bis Sicherheit – wir machen Ihr Zuhause intelligent.</p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="flex flex-wrap justify-center gap-6">
             {services.map((s, i) => (
-              <div key={i} className="bg-white rounded-2xl p-7 shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+              <Link
+                key={i}
+                to={s.zu}
+                className="group block w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] bg-white rounded-2xl p-7 shadow-sm border border-gray-100 no-underline hover:shadow-lg hover:-translate-y-1 hover:border-[#1A56E8]/30 transition-all duration-300"
+              >
                 <div className="text-4xl mb-4">{s.icon}</div>
-                <h3 className="font-bold text-gray-900 mb-2 text-lg">{s.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{s.desc}</p>
-              </div>
+                <h3 className="font-bold text-gray-900 mb-2 text-lg group-hover:text-[#1A56E8] transition-colors">{s.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed mb-4">{s.desc}</p>
+                <span className="text-[#1A56E8] font-semibold text-sm">Mehr erfahren →</span>
+              </Link>
             ))}
           </div>
+          <p className="text-center text-gray-500 mt-10">
+            Wir sind in <strong className="text-gray-700">Berlin und Brandenburg</strong> für Sie unterwegs –{' '}
+            <Link to="/leistungen" className="text-[#1A56E8] font-semibold no-underline hover:underline">alle Leistungen im Überblick</Link>
+          </p>
         </div>
       </section>
 

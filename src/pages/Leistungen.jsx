@@ -1,15 +1,16 @@
 import { Link } from 'react-router-dom'
-import { leistungen } from '../data/leistungen'
+import { leistungen, EINZUGSGEBIET } from '../data/leistungen'
 
 export default function Leistungen() {
   return (
     <>
       <div className="px-[5%] py-20 text-center" style={{ background: 'linear-gradient(135deg, #0B1B4D, #1A56E8)' }}>
         <h1 className="font-playfair font-extrabold text-white mb-4" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}>
-          Unsere Leistungen in Berlin
+          Unsere Leistungen
         </h1>
         <p className="text-white/80 text-lg max-w-2xl mx-auto">
           Smart Home nachrüsten, ohne Umbau und ohne Dreck – einzeln oder als Komplettpaket zum Festpreis.
+          Wir sind in {EINZUGSGEBIET} für Sie unterwegs.
         </p>
       </div>
 
@@ -32,11 +33,19 @@ export default function Leistungen() {
             ))}
           </div>
 
-          <div className="mt-12 bg-[#F0F4FF] rounded-2xl p-8 text-center">
-            <h2 className="font-playfair font-bold text-gray-900 text-xl mb-3">Lieber alles auf einmal?</h2>
-            <p className="text-gray-600 mb-6 leading-relaxed">
-              Unsere Komplettpakete bündeln Heizung, Licht und Sicherheit zum Festpreis – inklusive Montage,
-              zehn Automatisierungen und persönlicher Einweisung.
+          <div className="mt-12 bg-[#F0F4FF] rounded-2xl p-8 md:p-10 text-center">
+            <h2 className="font-playfair font-bold text-gray-900 text-2xl mb-4">
+              Zusammen ergibt es erst ein Smart Home
+            </h2>
+            <p className="text-gray-600 mb-4 leading-relaxed max-w-2xl mx-auto">
+              Einzelne Geräte können einzelne Dinge. Richtig stark wird es, wenn sie voneinander wissen: Der
+              Fensterkontakt dreht die Heizung herunter. Der Bewegungsmelder schaltet das Licht ein – und nachts,
+              wenn die Anlage scharf ist, löst derselbe Melder Alarm aus. Die Rollläden fahren herunter, sobald der
+              Rauchwarnmelder Ruhe gibt und die Sonne zu stark wird.
+            </p>
+            <p className="text-gray-600 mb-7 leading-relaxed max-w-2xl mx-auto">
+              Deshalb bündeln unsere Komplettpakete Heizung, Licht und Sicherheit zum Festpreis – inklusive Montage,
+              zehn aufeinander abgestimmten Automatisierungen und persönlicher Einweisung.
             </p>
             <Link to="/#pakete" className="btn-primary">Pakete ansehen</Link>
           </div>
