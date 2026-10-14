@@ -18,7 +18,7 @@ export const leistungen = [
     slug: 'heizungssteuerung',
     icon: '🌡️',
     kurz: 'Heizung',
-    h1: 'Heizungssteuerung, die mitdenkt',
+    h1: 'Heizungssteuerung',
     titel: 'Heizung smart nachrüsten | Berlin & Brandenburg',
     beschreibung:
       'Smarte Heizungssteuerung für Wohnung, Büro und Einrichtung. Funkthermostate auf vorhandene Ventile, ohne Eingriff in die Anlage. Festpreis inklusive Montage.',
@@ -91,7 +91,7 @@ export const leistungen = [
     slug: 'alarmanlage',
     icon: '🔔',
     kurz: 'Alarm',
-    h1: 'Funk-Alarmanlage nachrüsten – ohne Kabel, ohne Dreck',
+    h1: 'Alarm & Einbruchschutz',
     titel: 'Alarmanlage nachrüsten | Berlin & Brandenburg',
     beschreibung:
       'Funk-Alarmanlage für Wohnung, Haus und Gewerbe. Fenster- und Türüberwachung, Sirene, Nachricht aufs Handy. Nachgerüstet an einem Tag, zum Festpreis.',
@@ -151,21 +151,21 @@ export const leistungen = [
     slug: 'licht-und-beschattung',
     icon: '💡',
     kurz: 'Licht & Beschattung',
-    h1: 'Licht und Beschattung, die sich selbst regeln',
+    h1: 'Licht & Beschattung',
     titel: 'Licht & Rollladensteuerung nachrüsten | Berlin & Brandenburg',
     beschreibung:
       'Licht, Rollläden und Jalousien automatisch steuern – per App, Funktaster oder nach Sonnenstand. Nachgerüstet ohne neue Leitungen, für Wohnung, Haus und Büro.',
     claim: 'Morgens fahren die Rollläden hoch, abends geht das Licht an. Ohne dass jemand daran denkt.',
     einleitung:
-      'Es gibt in fast jeder Wohnung die eine Stelle, an der ein Lichtschalter fehlt. Und es gibt den Sommertag, an dem niemand da war, um die Jalousie herunterzulassen, und abends steht die Hitze im Raum. Beides lässt sich nachrüsten.',
+      'Es gibt in fast jeder Wohnung die eine Stelle, an der ein Lichtschalter fehlt. Und es gibt den Sommertag, an dem niemand da war, um die Jalousie herunterzulassen, und abends steht die Hitze im Raum. Beides lässt sich nachrüsten – an den vorhandenen Schaltern und überall dort, wo bisher keiner sitzt.',
     nutzen: [
+      {
+        titel: 'Schalter an jeder Wand',
+        text: 'Ihre vorhandenen Markenschalter tauschen wir gegen funkfähige Schalter im gleichen Design – an derselben Stelle, in derselben Dose, ohne neue Leitungen. Zusätzlich lassen sich Funktaster überall dort anbringen, wo bisher kein Schalter sitzt: am Bett, am Sofa, am Ende des Flurs. Sie werden geklebt oder geschraubt und halten auch auf Glas und Fliesen.',
+      },
       {
         titel: 'Beschattung nach Sonne, nicht nach Zufall',
         text: 'Rollläden und Jalousien fahren morgens hoch, abends herunter und bei starker Sonne automatisch in Schattenstellung. Im Sommer bleibt es innen kühler, im Winter geht abends weniger Wärme verloren.',
-      },
-      {
-        titel: 'Schalter an jeder Wand, ohne Kabel',
-        text: 'Der Funktaster wird geklebt oder geschraubt und kann überall hin – auch auf Glas oder Fliesen. Er sieht aus wie ein normaler Schalter und braucht keine Leitung.',
       },
       {
         titel: 'Licht geht an, wenn Sie den Raum betreten',
@@ -177,17 +177,28 @@ export const leistungen = [
       },
     ],
     komponenten: [
+      'Schalt- und Dimmaktoren anstelle Ihrer vorhandenen Wandschalter, im passenden Rahmen',
       'Funktaster, einzeln oder als Doppeltaster, frei an der Wand platzierbar',
-      'Zwischenstecker mit Schalt- und Messfunktion für Steh- und Tischleuchten',
       'Rollladen- und Jalousieaktoren anstelle des vorhandenen Schalters',
+      'Zwischenstecker mit Schalt- und Messfunktion für Steh- und Tischleuchten',
       'Bewegungs- und Präsenzmelder für Flur, Keller und Treppenhaus',
       'Helligkeits- und Wettersensorik für die automatische Beschattung',
     ],
     faq: [
       {
+        frage: 'Bleibt das Aussehen meiner Schalter erhalten?',
+        antwort:
+          'Wir verwenden Rahmen, die zu Ihren vorhandenen Schaltern passen. In der Regel fällt der getauschte Schalter im Raum nicht auf. Bedient wird er wie vorher – wer nichts mit der App zu tun haben will, merkt keinen Unterschied.',
+      },
+      {
+        frage: 'Wird dabei an der Elektroinstallation gearbeitet?',
+        antwort:
+          'Nur innerhalb der vorhandenen Schalterdose und am bestehenden Stromkreis. Es werden keine Leitungen neu verlegt, keine Stromkreise geschaffen und keine Arbeiten an Verteilung oder Zähleranlage vorgenommen. Nach dem Tausch führen wir die vorgeschriebenen Messungen nach DIN VDE 0100-600 durch und halten sie schriftlich fest. Wo mehr nötig ist, arbeiten wir mit einem eingetragenen Elektrofachbetrieb zusammen und sagen Ihnen das vorher.',
+      },
+      {
         frage: 'Funktioniert das mit meinen vorhandenen Lampen?',
         antwort:
-          'Steh-, Tisch- und Bodenleuchten mit Stecker schalten wir über Zwischenstecker. Bei fest angeschlossenen Deckenleuchten arbeiten wir über schaltbare Leuchtmittel oder über einen Schaltaktor anstelle des vorhandenen Schalters. Was in Ihrem Fall sinnvoll ist, sehen wir beim Termin vor Ort.',
+          'Steh-, Tisch- und Bodenleuchten mit Stecker schalten wir über Zwischenstecker. Fest angeschlossene Deckenleuchten steuern wir über einen Schaltaktor anstelle des vorhandenen Schalters. Was in Ihrem Fall sinnvoll ist, sehen wir beim Termin vor Ort.',
       },
       {
         frage: 'Lassen sich auch vorhandene Rollläden nachrüsten?',
@@ -195,73 +206,14 @@ export const leistungen = [
           'Wenn Ihre Rollläden bereits elektrisch über einen Wandschalter fahren, ja. Der Schalter wird gegen einen Aktor getauscht, der Rollladenmotor bleibt unverändert. Bei Gurtwicklern von Hand ist der Aufwand größer – das sagen wir Ihnen vor Ort offen.',
       },
       {
-        frage: 'Funktioniert der vorhandene Schalter weiter?',
+        frage: 'Geht das auch in einer Mietwohnung?',
         antwort:
-          'Ja. Alles bleibt wie gewohnt bedienbar, die automatische Steuerung kommt zusätzlich dazu. Niemand in Ihrem Haushalt oder Betrieb muss umlernen.',
+          'Funktaster und Zwischenstecker ohne Weiteres. Beim Tausch eines Wandschalters handelt es sich um einen Eingriff in die Installation – der ursprüngliche Zustand lässt sich wiederherstellen, Sie sollten Ihren Vermieter aber vorher einbeziehen. Wir sagen Ihnen, was Sie dafür fragen müssen.',
       },
       {
         frage: 'Verdunkelt die Automatik auch, wenn ich im Raum bin?',
         antwort:
-          'Nein. Sie legen fest, wann automatisch gefahren wird und wann nicht. Ein Druck auf den Taster hat immer Vorrang vor der Automatik.',
-      },
-    ],
-  },
-
-  {
-    slug: 'schalter-tauschen',
-    icon: '🔌',
-    kurz: 'Schalter',
-    h1: 'Vorhandene Schalter gegen smarte Schalter tauschen',
-    titel: 'Lichtschalter smart machen | Berlin & Brandenburg',
-    beschreibung:
-      'Vorhandene Wandschalter eins zu eins gegen smarte Schaltaktoren tauschen – ohne neue Leitungen und ohne Umbau. Für Licht, Rollläden und fest angeschlossene Geräte.',
-    claim: 'Der Schalter bleibt, wo er ist. Nur kann er jetzt mehr.',
-    einleitung:
-      'Funktaster und Zwischenstecker lösen vieles, aber nicht alles. Eine fest angeschlossene Deckenleuchte oder ein Rollladen lässt sich nur dort sauber steuern, wo schon ein Schalter sitzt. Dann wird der vorhandene Schalter gegen einen funkfähigen getauscht – an derselben Stelle, in derselben Dose.',
-    nutzen: [
-      {
-        titel: 'Eins zu eins, ohne Umbau',
-        text: 'Der vorhandene Schalter wird gegen einen funktionsgleichen Schaltaktor ersetzt. Es werden keine neuen Leitungen verlegt, keine Wände geöffnet und nichts an der Verteilung verändert.',
-      },
-      {
-        titel: 'Deckenleuchten und Rollläden werden steuerbar',
-        text: 'Genau die Verbraucher, die fest angeschlossen sind und sich sonst nicht einbinden lassen: Deckenlicht, Außenleuchten, Rollladen- und Jalousiemotoren.',
-      },
-      {
-        titel: 'Von Hand weiterhin bedienbar',
-        text: 'Der Schalter an der Wand funktioniert wie vorher. Wer nichts mit der App zu tun haben will, merkt keinen Unterschied – er drückt wie immer.',
-      },
-      {
-        titel: 'Gemessen und protokolliert',
-        text: 'Nach dem Tausch werden die vorgeschriebenen Messungen nach DIN VDE 0100-600 durchgeführt und schriftlich festgehalten. Das Protokoll bekommen Sie zu Ihren Unterlagen.',
-      },
-    ],
-    komponenten: [
-      'Schaltaktor anstelle des vorhandenen Licht- oder Rollladenschalters',
-      'Passender Rahmen im Design Ihrer übrigen Schalter',
-      'Dimmaktor, wo stufenloses Licht gewünscht ist',
-      'Messung und Prüfprotokoll nach DIN VDE 0100-600',
-    ],
-    faq: [
-      {
-        frage: 'Wird dabei an der Elektroinstallation gearbeitet?',
-        antwort:
-          'Nur innerhalb der vorhandenen Schalterdose und am bestehenden Stromkreis. Es werden keine Leitungen neu verlegt, keine Stromkreise geschaffen und keine Arbeiten an Verteilung oder Zähleranlage vorgenommen. Wo mehr nötig ist, arbeiten wir mit einem eingetragenen Elektrofachbetrieb zusammen und sagen Ihnen das vorher.',
-      },
-      {
-        frage: 'Geht das auch in einer Mietwohnung?',
-        antwort:
-          'Grundsätzlich ja, der ursprüngliche Zustand lässt sich wiederherstellen. Da es sich um einen Eingriff in die Installation handelt, sollten Sie Ihren Vermieter vorher einbeziehen. Wir sagen Ihnen, was Sie dafür fragen müssen.',
-      },
-      {
-        frage: 'Was, wenn in der Dose kein Neutralleiter liegt?',
-        antwort:
-          'Das kommt in Altbauten vor. Dann gibt es Aktoren, die ohne Neutralleiter auskommen, oder wir lösen die Stelle anders. Beim Termin vor Ort sehen wir in eine Dose hinein, bevor Sie etwas beauftragen.',
-      },
-      {
-        frage: 'Bleibt das Aussehen erhalten?',
-        antwort:
-          'Wir verwenden Rahmen, die zu Ihren vorhandenen Schaltern passen. In der Regel fällt der getauschte Schalter im Raum nicht auf.',
+          'Nein. Sie legen fest, wann automatisch gefahren wird und wann nicht. Ein Druck auf den Schalter hat immer Vorrang vor der Automatik.',
       },
     ],
   },
@@ -270,7 +222,7 @@ export const leistungen = [
     slug: 'rauchwarnmelder',
     icon: '🚨',
     kurz: 'Rauchmelder',
-    h1: 'Vernetzte Rauchwarnmelder – alle schlagen an, nicht nur einer',
+    h1: 'Rauchwarnmelder',
     titel: 'Rauchwarnmelder montieren lassen | Berlin & Brandenburg',
     beschreibung:
       'Vernetzte Funk-Rauchwarnmelder für Wohnung, Haus und Gewerbe. Montage nach DIN 14676 mit Protokoll, Meldung aufs Handy, jährliche Prüfung auf Wunsch.',
@@ -334,7 +286,7 @@ export const leistungen = [
     slug: 'videoueberwachung',
     icon: '📹',
     kurz: 'Kameras',
-    h1: 'Innen- und Außenkameras mit Blick aufs Handy',
+    h1: 'Kameras',
     titel: 'Überwachungskamera installieren | Berlin & Brandenburg',
     beschreibung:
       'Innen- und Außenkameras mit Live-Bild aufs Smartphone, fachgerecht eingerichtet. Mit Akku oder Steckernetzteil, ohne Kabelverlegung. Datenschutz inklusive.',
@@ -388,7 +340,7 @@ export const leistungen = [
     slug: 'wartung',
     icon: '🛠️',
     kurz: 'Wartung',
-    h1: 'Wartung und Support – ein Ansprechpartner, der Ihre Anlage kennt',
+    h1: 'Wartung & Support',
     titel: 'Smart-Home-Wartung & Support | Berlin & Brandenburg',
     beschreibung:
       'Batteriewechsel, Aktualisierungen, neue Automatisierungen und jemand, der zurückruft. Auch für Anlagen, die wir nicht selbst gebaut haben.',

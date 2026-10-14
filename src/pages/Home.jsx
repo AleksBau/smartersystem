@@ -7,11 +7,10 @@ import StarterSets from '../components/StarterSets'
 // stehen in data/leistungen.js.
 const services = [
   { icon: '🌡️', title: 'Heizungssteuerung', zu: '/leistungen/heizungssteuerung', desc: 'Jeder Raum nach Zeitplan statt nach Gefühl. Spart spürbar Heizkosten – in Wohnungen, Büros und Einrichtungen.' },
-  { icon: '💡', title: 'Licht & Beschattung', zu: '/leistungen/licht-und-beschattung', desc: 'Licht nach Anwesenheit, Rollläden und Jalousien nach Sonnenstand. Schalter an jeder Wand, auch ohne Kabel.' },
+  { icon: '💡', title: 'Licht & Beschattung', zu: '/leistungen/licht-und-beschattung', desc: 'Vorhandene Schalter werden smart, zusätzliche Taster kommen überall hin. Rollläden fahren nach Sonnenstand.' },
   { icon: '🔔', title: 'Alarm & Einbruchschutz', zu: '/leistungen/alarmanlage', desc: 'Fenster und Türen überwacht, Sirene und Licht im Alarmfall, Nachricht aufs Handy in Sekunden.' },
   { icon: '📹', title: 'Kameras', zu: '/leistungen/videoueberwachung', desc: 'Innen und außen, mit Live-Bild aufs Smartphone. Mit Akku oder Stecker, ohne Kabel durch die Wand.' },
   { icon: '🚨', title: 'Rauchwarnmelder', zu: '/leistungen/rauchwarnmelder', desc: 'Vernetzt, damit alle gemeinsam anschlagen. Montage nach DIN 14676 mit schriftlichem Protokoll.' },
-  { icon: '🔌', title: 'Schalter tauschen', zu: '/leistungen/schalter-tauschen', desc: 'Vorhandene Wandschalter eins zu eins gegen smarte Schalter – ohne neue Leitungen, ohne Umbau.' },
   { icon: '🛠️', title: 'Wartung & Support', zu: '/leistungen/wartung', desc: 'Batterien, Aktualisierungen, neue Automatisierungen. Ein Ansprechpartner, der Ihre Anlage kennt.' },
 ]
 
