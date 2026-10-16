@@ -48,7 +48,15 @@ const LIMITS = [
     'phone'   => 30,
     'zip'     => 10,
     'message' => 3000,
+    'quelle'  => 40,  // Herkunft, wird gegen eine feste Liste geprueft
     'website' => 100, // Spam-Falle, muss leer bleiben
+];
+
+/** Zulaessige Antworten auf die Herkunftsfrage. Alles andere wird verworfen,
+ *  damit ueber dieses Feld kein beliebiger Text in die Mail gelangt. */
+const QUELLEN = [
+    'Google-Suche', 'Google Maps', 'Empfehlung', 'Hausverwaltung',
+    'Flyer', 'Portal', 'Soziale Medien', 'Sonstiges',
 ];
 
 /** Telefonnummer fuer die Fusszeilen der Mails. */
@@ -242,6 +250,12 @@ $phone   = cleanLine($data['phone']   ?? '', LIMITS['phone']);
 $zip     = cleanLine($data['zip']     ?? '', LIMITS['zip']);
 $message = cleanText($data['message'] ?? '', LIMITS['message']);
 $falle   = cleanLine($data['website'] ?? '', LIMITS['website']);
+$quelle  = cleanLine($data['quelle']  ?? '', LIMITS['quelle']);
+
+// Nur Werte aus der eigenen Auswahlliste uebernehmen.
+if (!in_array($quelle, QUELLEN, true)) {
+    $quelle = '';
+}
 
 // Spam-Falle: Das Feld ist im Formular unsichtbar. Nur Bots fuellen es aus.
 if ($falle !== '') {
@@ -338,6 +352,7 @@ $zeilen = [
     ['📱 Telefon', $oderKeine($phone)],
     ['🏢 Firma',   $oderKeine($company)],
     ['📍 PLZ',     $oderKeine($zip)],
+    ['🔎 Gefunden über', $oderKeine($quelle)],
 ];
 
 $tabelle = '';
@@ -384,6 +399,7 @@ $notify_text = implode("\n", [
     'Telefon: ' . $oderKeine($phone),
     'Firma:   ' . $oderKeine($company),
     'PLZ:     ' . $oderKeine($zip),
+    'Gefunden über: ' . $oderKeine($quelle),
     '',
     'Nachricht:',
     $oderKeine($message),
