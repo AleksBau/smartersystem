@@ -32,7 +32,6 @@ export default function Kontakt() {
           phone:   data.get('phone') || '',
           zip:     data.get('zip') || '',
           message: data.get('message') || '',
-          quelle:  data.get('quelle') || '',
         })
       })
 
@@ -151,30 +150,6 @@ export default function Kontakt() {
                 <label className="block text-xs font-semibold text-gray-800 mb-1.5">Ihre Nachricht</label>
                 <textarea name="message" rows={4} maxLength={3000} placeholder="Beschreiben Sie kurz, was Sie sich vorstellen …"
                   className="w-full px-4 py-3 rounded-xl border-[1.5px] border-gray-200 bg-[#F0F4FF] text-gray-900 text-sm outline-none focus:border-[#1A56E8] focus:bg-white focus:ring-4 focus:ring-[#1A56E8]/8 transition-all resize-y min-h-[100px]" />
-              </div>
-
-              {/* Herkunft – freiwillig. Ohne diese Angabe lässt sich später
-                  nicht sagen, welcher Kanal tatsächlich Aufträge bringt. */}
-              <div className="mb-4">
-                <label htmlFor="quelle" className="block text-xs font-semibold text-gray-800 mb-1.5">
-                  Wie sind Sie auf uns aufmerksam geworden?
-                </label>
-                <select
-                  id="quelle"
-                  name="quelle"
-                  defaultValue=""
-                  className="w-full px-4 py-3 rounded-xl border-[1.5px] border-gray-200 bg-[#F0F4FF] text-gray-900 text-sm outline-none focus:border-[#1A56E8] focus:bg-white focus:ring-4 focus:ring-[#1A56E8]/8 transition-all"
-                >
-                  <option value="">Bitte auswählen (freiwillig)</option>
-                  <option value="Google-Suche">Google-Suche</option>
-                  <option value="Google Maps">Google Maps</option>
-                  <option value="Empfehlung">Empfehlung von Bekannten</option>
-                  <option value="Hausverwaltung">Über meine Hausverwaltung</option>
-                  <option value="Flyer">Flyer oder Aushang</option>
-                  <option value="Portal">Handwerkerportal im Internet</option>
-                  <option value="Soziale Medien">Soziale Medien</option>
-                  <option value="Sonstiges">Etwas anderes</option>
-                </select>
               </div>
 
               {/* Spam-Falle – für Menschen unsichtbar, kein Pflichtfeld */}
